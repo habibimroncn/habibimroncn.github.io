@@ -1,0 +1,9 @@
+User-agent: Googlebot
+Allow: /
+Disallow: /404
+
+User-agent: *
+Allow: /
+Disallow: /404
+Sitemap: https://habibimroncn.github.io/sitemap.xml
+Host: https://habibimroncn.github.io
