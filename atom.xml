@@ -1,115 +1,26 @@
+---
+---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>Hello. I'm Habib Nugroho.</title>
- <link href="https://habibimroncn.github.io//atom.xml" rel="self"/>
- <link href="https://habibimroncn.github.io//"/>
- <updated>2022-08-21T00:49:35+07:00</updated>
- <id>https://habibimroncn.github.io/</id>
+ <title>{{ site.title | xml_escape }}</title>
+ <link href="{{ site.url }}/atom.xml" rel="self"/>
+ <link href="{{ site.url }}/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>{{ site.url }}</id>
  <author>
-   <name>Habib Nugroho</name>
-   <email></email>
+   <name>{{ site.admin_name }}</name>
+   <email>{{ site.data.global.admin_email }}</email>
  </author>
 
- 
+ {% for post in site.posts %}
  <entry>
-   <title>Aviator Farms</title>
-   <link href="https://habibimroncn.github.io//development/2022/08/20/aviatorfarms-themes.html"/>
-   <updated>2022-08-20T23:20:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2022/08/20/aviatorfarms-themes</id>
-   <content type="html">
-</content>
+   <title>{{ post.title }}</title>
+   <link href="{{ site.url }}{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>{{ site.url }}{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
- 
- <entry>
-   <title>Custom Calculator</title>
-   <link href="https://habibimroncn.github.io//development/2022/08/20/customcalculator-themes.html"/>
-   <updated>2022-08-20T23:11:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2022/08/20/customcalculator-themes</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Edge Data Solutions</title>
-   <link href="https://habibimroncn.github.io//development/2022/08/20/edgedatasolutions-themes.html"/>
-   <updated>2022-08-20T23:01:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2022/08/20/edgedatasolutions-themes</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Generations Skincare</title>
-   <link href="https://habibimroncn.github.io//development/2022/08/20/generationsskincare-themes.html"/>
-   <updated>2022-08-20T22:40:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2022/08/20/generationsskincare-themes</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Poodle Pet Essentials</title>
-   <link href="https://habibimroncn.github.io//development/2022/08/20/poodlepet-themes.html"/>
-   <updated>2022-08-20T22:14:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2022/08/20/poodlepet-themes</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>NuSpecies</title>
-   <link href="https://habibimroncn.github.io//development/2022/08/20/nuspecies-themes.html"/>
-   <updated>2022-08-20T22:03:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2022/08/20/nuspecies-themes</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Hope Connect</title>
-   <link href="https://habibimroncn.github.io//development/2022/08/20/hope-connect-themes.html"/>
-   <updated>2022-08-20T21:50:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2022/08/20/hope-connect-themes</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Phantom</title>
-   <link href="https://habibimroncn.github.io//development/design/2016/02/21/phantom-jekyll-template.html"/>
-   <updated>2016-02-21T04:15:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/design/2016/02/21/phantom-jekyll-template</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Rescue Themes</title>
-   <link href="https://habibimroncn.github.io//development/design/2016/02/20/rescue-themes.html"/>
-   <updated>2016-02-20T22:56:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/design/2016/02/20/rescue-themes</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Weathercast</title>
-   <link href="https://habibimroncn.github.io//development/2016/02/20/weathercast.html"/>
-   <updated>2016-02-20T22:56:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2016/02/20/weathercast</id>
-   <content type="html">
-</content>
- </entry>
- 
- <entry>
-   <title>Bloc Jams Angular</title>
-   <link href="https://habibimroncn.github.io//development/2016/02/20/bloc-jams-angular.html"/>
-   <updated>2016-02-20T21:15:00+07:00</updated>
-   <id>https://habibimroncn.github.io//development/2016/02/20/bloc-jams-angular</id>
-   <content type="html">
-</content>
- </entry>
- 
+ {% endfor %}
 
 </feed>
