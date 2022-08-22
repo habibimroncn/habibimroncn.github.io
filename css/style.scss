@@ -13,7 +13,7 @@
 
 --------------------------------------------------------------*/
 
-@import '../_sass/bootstrap';
+/* @import '../_sass/bootstrap'; */
 @import '../_sass/mixins';
 
 $primary: #0a0a0a;
@@ -258,10 +258,18 @@ button.btn, input.btn {
   }
   img.img-responsive {
     @include bp-xsmall {
-      display: none;
+      
     }
     @include bp-small {
-      display: none;
+      
+    }
+  }
+  .mobile-row-reverse {
+    @include bp-xsmall {
+      flex-direction: column-reverse!important;
+    }
+    @include bp-small {
+      flex-direction: column-reverse!important;
     }
   }
   .content {
@@ -436,3 +444,17 @@ pre {
     .highlight .vg { color: #000000 } /* Name.Variable.Global */
     .highlight .vi { color: #000000 } /* Name.Variable.Instance */
     .highlight .il { color: #0000cf; font-weight: bold } /* Literal.Number.Integer.Long */
+.hero-buttons {
+  a {
+    text-decoration:none;
+  }
+}
+.site-footer {
+  .text-muted.text-left {
+    a {
+      font-family: 'Open Sans', sans-serif;
+      color: #C8D7E1;
+      text-decoration:none;
+    } 
+  }
+}
