@@ -634,3 +634,14 @@ pre > code {
   font-family: 'Open Sans', sans-serif;
   color: #C8D7E1;
   text-decoration: none; }
+
+a[data-bs-target='#contact'] {
+  color: #FF5B33 !important; }
+
+img.img-responsive {
+  padding: 10px;
+  border: 2px solid #ECEFF1; }
+
+.content-container {
+  text-align: center;
+  text-align: -webkit-center; }
