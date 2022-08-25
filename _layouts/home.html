@@ -16,8 +16,8 @@
 
             <div class="break"></div>
 
-            {% for post in site.posts %}
-              {% if post.status == "publish" %}
+            {% for post in paginator.posts %}
+
                 <div class="wow fadeIn">
                 {% if post.position == "left" %}
                   {% include content-left.html %}
@@ -27,7 +27,7 @@
                   {% include content-right.html %}
                 {% endif %}
                 </div>
-              {% endif %}
+
             {% endfor %}
 
             {% include pagination.html %}

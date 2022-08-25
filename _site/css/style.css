@@ -33,7 +33,7 @@ body, h1, h2, h3, h4, h5, h6, .site-footer .text-muted.text-left a {
 --------------------------------------------------------------*/
 @media (min-width: 1200px) {
   .container {
-    width: 1200px; } }
+    /* width: 1200px; */ } }
 body {
   background-color: #e9edf0;
   -webkit-font-smoothing: antialiased; }
@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; }
 
 article {
-  margin: 5em 0; }
+  padding: 24px; }
 
 p {
   line-height: 1.8;
@@ -646,6 +646,24 @@ img.img-responsive {
   padding: 10px;
   border: 2px solid #ECEFF1; }
 
-.content-container {
-  text-align: center;
-  text-align: -webkit-center; }
+/*.content-container {
+  text-align:center;
+  text-align:-webkit-center;
+}*/
+.page-item:last-child .page-link {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.page-item:first-child .page-link {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0; }
+
+.page-link {
+  color: #000000; }
+
+.page-item:not(.disabled) .page-link:hover {
+  color: #FF5B33; }
+
+.disabled > .page-link,
+.page-link.disabled {
+  color: #C8D7E1; }
