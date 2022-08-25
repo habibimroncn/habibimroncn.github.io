@@ -17,11 +17,16 @@
  @param {Number} $percentage - percentage of `$color` in returned color
  @return {Color}
 */
-body {
-  font-family: 'Open Sans', sans-serif; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Merriweather', serif; }
+@font-face {
+  font-family: 'Alumatica';
+  src: url("../font/Alumatica-Regular.eot");
+  src: local("Alumatica Regular"), local("Alumatica-Regular"), url("../font/Alumatica-Regular.eot?#iefix") format("embedded-opentype"), url("../font/Alumatica-Regular.woff2") format("woff2"), url("../font/Alumatica-Regular.woff") format("woff"), url("../font/Alumatica-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+body, h1, h2, h3, h4, h5, h6, .site-footer .text-muted.text-left a {
+  font-family: 'Alumatica', sans-serif;
+  font-weight: normal;
+  font-style: normal; }
 
 /*--------------------------------------------------------------
 	1.0 Defaults
@@ -631,7 +636,6 @@ pre > code {
   text-decoration: none; }
 
 .site-footer .text-muted.text-left a {
-  font-family: 'Open Sans', sans-serif;
   color: #C8D7E1;
   text-decoration: none; }
 

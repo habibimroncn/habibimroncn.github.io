@@ -22,6 +22,24 @@ $secondary: #FF7B7B;
 %opensans { font-family: 'Open Sans', sans-serif; }
 %merriweather { font-family: 'Merriweather', serif; }
 
+@font-face {
+  font-family: 'Alumatica';
+  src: url('../font/Alumatica-Regular.eot');
+  src: local('Alumatica Regular'), local('Alumatica-Regular'),
+      url('../font/Alumatica-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../font/Alumatica-Regular.woff2') format('woff2'),
+      url('../font/Alumatica-Regular.woff') format('woff'),
+      url('../font/Alumatica-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+%alumatica {
+  font-family: 'Alumatica', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*--------------------------------------------------------------
 	1.0 Defaults
 --------------------------------------------------------------*/
@@ -34,12 +52,12 @@ $secondary: #FF7B7B;
 
 body {
   background-color: #e9edf0;
-  @extend %opensans;
+  @extend %alumatica;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @extend %merriweather;
+  @extend %alumatica;
   font-weight: 700;
 }
 
@@ -452,7 +470,7 @@ pre {
 .site-footer {
   .text-muted.text-left {
     a {
-      font-family: 'Open Sans', sans-serif;
+      @extend %alumatica;
       color: #C8D7E1;
       text-decoration:none;
     } 
