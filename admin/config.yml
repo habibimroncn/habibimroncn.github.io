@@ -19,11 +19,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Categories', name: 'categories', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'string' }
-      - { label: 'Featured Image', name: 'featured_image', widget: 'image', choose_url: true, default: "/img/posts/default_image.jpg", 
-          media_library: 
-            config: 
-              multiple: true 
-        }
+      - { label: 'Featured Image', name: 'featured_image', widget: 'image', choose_url: true, default: "/img/posts/default_image.jpg" }
       - { label: 'Project Link', name: 'project_link', widget: 'string' }
       - { label: 'Button Icon', name: 'button_icon', widget: 'string' }
       - { label: 'Button Text', name: 'button_text', widget: 'string' }
