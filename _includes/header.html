@@ -59,9 +59,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
-        {% for item in site.nav_item %}
+        {% for item in site.data.navigation.items %}
         <li class="nav-item">
-          <a class="nav-link" href="{{ item.url }}">{{ item.text }}</a>
+          <a class="nav-link" title="{{ item.text }}" href="{{ item.url }}">{{ item.text }}</a>
         </li>
         {% endfor %}
         </ul>

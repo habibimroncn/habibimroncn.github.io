@@ -22,6 +22,7 @@ twitter_username: 'Hab_15'
 github_username: 'habibimroncn'
 medium_username: ''
 linkedin_username: 'habib-nugroho'
+permalink: /:categories/:year/:month/:day/:title:output_ext
 
 # Build settings
 markdown: kramdown
@@ -101,6 +102,6 @@ enable_contact: true
 
 #### Phantom Navigation menu
 enable_nav: true
-nav_item:
-  - { url: '/', text: 'Home' }
+# nav_item:
+#  - { url: '/', text: 'Home' }
 #  - { url: '/about', text: 'About' }

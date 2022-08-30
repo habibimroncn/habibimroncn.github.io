@@ -1,0 +1,4 @@
+# _data/navigation.yml
+items:
+  - text: Home
+    url: /
