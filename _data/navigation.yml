@@ -1,4 +1,5 @@
-# _data/navigation.yml
 items:
   - text: Home
     url: /
+  - text: About
+    url: /about
