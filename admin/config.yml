@@ -26,3 +26,24 @@ collections:
       - { label: 'Lead Text', name: 'lead_text', widget: 'text' }
       - { label: 'Status', name: 'status', widget: 'select', options: ["publish", "draft"] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Pages'
+    editor:
+      preview: false
+    files:
+      - label: 'About Page'
+        name: 'about'
+        file: 'about.md'
+        fields:
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
+          - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
+          - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/about/' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: '404 Page'
+        name: '404'
+        file: '404.md'
+        fields:
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
+          - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
+          - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/404.html' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
