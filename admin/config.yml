@@ -3,10 +3,30 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-media_folder: 'assets/uploads'
+media_folder: 'img/posts'
 collections:
   - name: 'blog'
     label: 'Blog'
     folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
     fields:
-      - { name: Title }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'inner' }
+      - { label: 'Position', name: 'position', widget: 'select', options: ["left", "right"] }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Categories', name: 'categories', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'string' }
+      - { label: 'Featured Image', name: 'featured_image', widget: 'image', choose_url: true, default: "/img/posts/default_image.jpg", 
+          media_library: 
+            config: 
+              multiple: true 
+        }
+      - { label: 'Project Link', name: 'project_link', widget: 'string' }
+      - { label: 'Button Icon', name: 'button_icon', widget: 'string' }
+      - { label: 'Button Text', name: 'button_text', widget: 'string' }
+      - { label: 'Lead Text', name: 'lead_text', widget: 'text' }
+      - { label: 'Status', name: 'status', widget: 'select', options: ["publish", "draft"] }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
