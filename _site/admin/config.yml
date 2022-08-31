@@ -63,7 +63,7 @@ collections:
               - { label: Name, name: text, widget: string }
               - { label: Link, name: url, widget: string }
           - label: 'Settings'
-            name: 'items'
+            name: 'config'
             widget: 'list'
             create: false
             fields:
