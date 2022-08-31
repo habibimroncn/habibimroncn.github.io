@@ -62,11 +62,11 @@ collections:
             fields:
               - { label: Name, name: text, widget: string }
               - { label: Link, name: url, widget: string }
-          - label: 'Settings'
-            name: 'config'
-            widget: 'list'
-            create: false
-            fields:
-              - { label: Footer Text, name: footer_text, widget: string }
-              - { label: Admin Name, name: admin_name, widget: string }
-              - { label: Google Analytic, name: google_analytics, widget: string }
+      - label: 'Settings'
+        name: 'settings'
+        create: false
+        file: '_data/settings.yml'
+        fields:
+          - { label: Footer Text, name: footer_text, widget: string }
+          - { label: Admin Name, name: admin_name, widget: string }
+          - { label: Google Analytic, name: google_analytics, widget: string }
