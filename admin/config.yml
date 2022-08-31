@@ -62,3 +62,11 @@ collections:
             fields:
               - { label: Name, name: text, widget: string }
               - { label: Link, name: url, widget: string }
+          - label: 'Settings'
+            name: 'items'
+            widget: 'list'
+            create: false
+            fields:
+              - { label: Footer Text, name: footer_text, widget: string }
+              - { label: Admin Name, name: admin_name, widget: string }
+              - { label: Google Analytic, name: google_analytics, widget: string }
