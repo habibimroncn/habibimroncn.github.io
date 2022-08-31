@@ -28,6 +28,7 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'pages'
     label: 'Pages'
+    create: true
     editor:
       preview: false
     files:
