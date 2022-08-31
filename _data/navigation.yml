@@ -3,7 +3,3 @@ items:
     url: /
   - text: About
     url: /about
-config:
-  - footer_text: test0
-    admin_name: test1
-    google_analytics: test2
