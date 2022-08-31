@@ -18,10 +18,10 @@ email: 'habibimron1508@gmail.com'
 description: "I'm a software developer from Indonesia creating useful things for the web. Focus on WordPress, Shopify, and Laravel."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://habibimroncn.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
-twitter_username: 'Hab_15'
-github_username: 'habibimroncn'
-medium_username: ''
-linkedin_username: 'habib-nugroho'
+#twitter_username: 'Hab_15'
+#github_username: 'habibimroncn'
+#medium_username: ''
+#linkedin_username: 'habib-nugroho'
 permalink: /:categories/:year/:month/:day/:title:output_ext
 
 # Build settings
@@ -95,13 +95,13 @@ paginate_path: "/page/:num/"
 ############################################################
 
 ### Phantom settings
-footer_text: '© 2022 Habib Nugroho source by Jami Gibbs'
-admin_name: 'Habib Nugroho'
-google_analytics: "UA-153173943-1" # Update with your own tracking ID
-enable_contact: true
+#footer_text: '© 2022 Habib Nugroho source by Jami Gibbs'
+#admin_name: 'Habib Nugroho'
+#google_analytics: "UA-153173943-1" # Update with your own tracking ID
+#enable_contact: true
 
 #### Phantom Navigation menu
-enable_nav: true
+#enable_nav: true
 # nav_item:
 #  - { url: '/', text: 'Home' }
 #  - { url: '/about', text: 'About' }

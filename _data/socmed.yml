@@ -1,0 +1,13 @@
+socials:
+  - title: 'Twitter'
+    type: 'twitter'
+    url: 'https://twitter.com/Hab_15'
+    icon: '<i class="fa fa-twitter fa-lg" aria-hidden="true"></i>'
+  - title: 'Github'
+    type: 'github'
+    url: 'https://github.com/habibimroncn'
+    icon: '<i class="fa fa-github fa-lg" aria-hidden="true"></i>'
+  - title: 'LinkedIn'
+    type: 'linkedin'
+    url: 'https://www.linkedin.com/in/habib-nugroho'
+    icon: '<i class="fa fa-linkedin" aria-hidden="true"></i>'

@@ -70,3 +70,18 @@ collections:
           - { label: Footer Text, name: footer_text, widget: string }
           - { label: Admin Name, name: admin_name, widget: string }
           - { label: Google Analytic, name: google_analytics, widget: string }
+          - { label: Enable Contact?, name: enable_contact, widget: "boolean", default: true }
+          - { label: Enable Navigation?, name: enable_nav, widget: "boolean", default: true }
+      - label: 'Socials'
+        name: 'socmed'
+        create: true
+        file: '_data/socmed.yml'
+        fields:
+          - label: 'Social Items'
+            name: 'socials'
+            widget: 'list'
+            fields:
+              - { label: Name, name: title, widget: string }
+              - { label: Type, name: type, widget: string }
+              - { label: URL, name: url, widget: string }
+              - { label: Icon, name: icon, widget: string }
