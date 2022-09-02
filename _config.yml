@@ -17,7 +17,7 @@ title: "Hello. I'm Habib Nugroho."
 email: 'habibimron1508@gmail.com'
 description: "I'm a software developer from Indonesia creating useful things for the web. Focus on WordPress, Shopify, and Laravel."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://habibimroncn.github.io/" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://habibimroncn.github.io" # the base hostname & protocol for your site, e.g. https://example.com
 #twitter_username: 'Hab_15'
 #github_username: 'habibimroncn'
 #medium_username: ''
