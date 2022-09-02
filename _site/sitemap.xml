@@ -41,6 +41,9 @@
 <loc>http://localhost:4000/snippet/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/snippet/test-lorem-ipsum/</loc>
+</url>
+<url>
 <loc>http://localhost:4000/page/2/</loc>
 </url>
 <url>

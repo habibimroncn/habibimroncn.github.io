@@ -37,6 +37,7 @@ collections:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
           - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/about/' }
+          - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: '404 Page'
         name: '404'
@@ -45,6 +46,7 @@ collections:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
           - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/404.html' }
+          - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'Snippet Page'
         name: 'snippet'
@@ -53,6 +55,7 @@ collections:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
           - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/snippet/' }
+          - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'config'
     label: 'Config'
@@ -103,4 +106,5 @@ collections:
       - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'string' }
+      - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }

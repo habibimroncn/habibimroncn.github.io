@@ -2,6 +2,7 @@
 layout: full
 title: About
 permalink: /about/
+seo_description: 'I am a remote worker from Indonesia and now still working from home. My interests and expertise are WordPress, Shopify and Laravel'
 ---
 I am a remote worker from Indonesia and now still working from home. My interests and expertise are WordPress, Shopify and Laravel. But for now, the jobs that I often receive are WordPress and Shopify, so for these two skills, it's an advanced type and for Laravel it's still a medium type.
 

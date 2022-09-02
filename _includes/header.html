@@ -4,10 +4,9 @@
   <!-- Meta -->
   <meta charset="utf-8">
 
-  <title>{{ page.title }}</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <meta name="title" content="{{ page.title }}">
-  <meta name="description" content="{{ site.description }}">
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% elsif post.title %}{{ post.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}</title>
+  <meta name="title" content="{% if page.title %}{{ page.title }} - {{ site.title }}{% elsif post.title %}{{ post.title }} - {{ site.title }}{% else %}{{ site.title }} - {{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.seo_description %}{{ page.seo_description }}{% else %}{{ site.description }}{% endif %}">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="yes" name="apple-mobile-web-app-capable">
@@ -15,16 +14,16 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:url" content="{% if page.permalink %}{{ site.url }}{{ page.permalink }}{% else %}{{ site.url }}{% endif %}">
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:description" content="{% if page.seo_description %}{{ page.seo_description }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="{{ site.url }}/img/logo_bg.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="{{ site.url }}">
+  <meta property="twitter:url" content="{% if page.permalink %}{{ site.url }}{{ page.permalink }}{% else %}{{ site.url }}{% endif %}">
   <meta property="twitter:title" content="{{ page.title }}">
-  <meta property="twitter:description" content="{{ site.description }}">
+  <meta property="twitter:description" content="{% if page.seo_description %}{{ page.seo_description }}{% else %}{{ site.description }}{% endif %}">
   <meta property="twitter:image" content="{{ site.url }}/img/logo_bg.png">
 
   <!-- RSS -->
@@ -44,6 +43,8 @@
   <!-- Styles -->
   <link rel="stylesheet" href="{{ "/css/animate.min.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/css/style.css" | prepend: site.baseurl }}">
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </head>
 <body class="{{ post.title | downcase | replace:' ','-' | replace:',','' | strip_html }}{% if page.category %} category-{{ page.category }}{% endif %}{% if page.layout-class %} layout-{{ page.layout-class }}{% endif %}">
