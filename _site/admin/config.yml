@@ -1,5 +1,4 @@
 # config.yml
-
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
@@ -47,6 +46,14 @@ collections:
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
           - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/404.html' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: 'Snippet Page'
+        name: 'snippet'
+        file: 'snippet.md'
+        fields:
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
+          - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
+          - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/snippet/' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'config'
     label: 'Config'
     editor:
@@ -85,3 +92,15 @@ collections:
               - { label: Type, name: type, widget: string }
               - { label: URL, name: url, widget: string }
               - { label: Icon, name: icon, widget: string }
+  - name: 'snippet'
+    label: 'Snippet'
+    folder: 'snippet/'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Permalink', name: 'permalink', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
