@@ -10,6 +10,8 @@ main_class: snippet
 ## Version : 2.2.9.2
 <br>
 
+WOOF - WooCommerce Products Filter - Fixing Price Filter
+
 ### woocommerce-products-filter/index.php
 
 {% highlight php %}
