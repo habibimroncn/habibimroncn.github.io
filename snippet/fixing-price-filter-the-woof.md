@@ -5,8 +5,8 @@ permalink: /snippet/woof-wc-products-filter-fixing-price-filter/
 seo_description: WOOF - WooCommerce Products Filter - Fixing Price Filter
 ---
 
-**Plugin : WOOF - WooCommerce Products Filter by realmag777**
-**V﻿ersion : 2.2.9.2**
+# Plugin : WOOF - WooCommerce Products Filter by realmag777
+# V﻿ersion : 2.2.9.2
 
 ## woocommerce-products-filter/index.php
 
