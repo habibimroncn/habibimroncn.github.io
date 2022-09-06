@@ -5,6 +5,8 @@ permalink: /snippet/sort-woocommerce-products-by-sku/
 seo_description: Sort WooCommerce Products by SKU
 main_class: snippet
 ---
+#﻿# Sort WooCommerce Products by SKU
+<﻿br>
 {% highlight php %}
 /**
  * Adds the ability to sort products in the shop based on the SKU
