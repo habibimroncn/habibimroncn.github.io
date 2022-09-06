@@ -47,6 +47,7 @@ Delete the line of code inside
 if ($request['min_price'] <= $request['max_price']) {}
 {% endhighlight %}
 a﻿nd replace it with the one above.
+![index.php](/img/posts/index.png)
 
 ### woocommerce-products-filter/classes/helper.php
 
@@ -57,5 +58,6 @@ if ($v[0] > $v[1]) {
 {% endhighlight %}
 
 R﻿eplace the code line 441-443 with the one above.
+![helper.php](/img/posts/helper.png)
 
 Hope that fixes the problem with the price filter.
