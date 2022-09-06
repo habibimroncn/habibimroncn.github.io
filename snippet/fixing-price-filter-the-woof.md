@@ -7,8 +7,7 @@ seo_description: WOOF - WooCommerce Products Filter - Fixing Price Filter
 
 ## Plugin : WOOF - WooCommerce Products Filter by realmag777
 ## V﻿ersion : 2.2.9.2
-<﻿br/>
----
+
 
 ### woocommerce-products-filter/index.php
 
