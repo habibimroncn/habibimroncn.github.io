@@ -5,10 +5,12 @@ permalink: /snippet/woof-wc-products-filter-fixing-price-filter/
 seo_description: WOOF - WooCommerce Products Filter - Fixing Price Filter
 ---
 
-# Plugin : WOOF - WooCommerce Products Filter by realmag777
-# V﻿ersion : 2.2.9.2
+## Plugin : WOOF - WooCommerce Products Filter by realmag777
+## V﻿ersion : 2.2.9.2
+<﻿br/>
+---
 
-## woocommerce-products-filter/index.php
+### woocommerce-products-filter/index.php
 
 {% highlight php %}
 if($request['min_price'] == $request['max_price']){
@@ -46,7 +48,7 @@ if ($request['min_price'] <= $request['max_price']) {}
 {% endhighlight %}
 a﻿nd replace it with the one above.
 
-## woocommerce-products-filter/classes/helper.php
+### woocommerce-products-filter/classes/helper.php
 
 {% highlight php %}
 if ($v[0] > $v[1]) {
