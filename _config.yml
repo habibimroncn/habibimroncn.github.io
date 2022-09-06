@@ -23,6 +23,9 @@ url: "https://habibimroncn.github.io" # the base hostname & protocol for your si
 #medium_username: ''
 #linkedin_username: 'habib-nugroho'
 permalink: /:categories/:year/:month/:day/:title:output_ext
+collections:
+  snippets:
+    output: true
 
 # Build settings
 markdown: kramdown

@@ -511,3 +511,26 @@ img.img-responsive {
 .page-link.disabled {
     color: #C8D7E1;
 }
+.snippet {
+  img {
+    width:auto;
+    max-width:100%;
+    height:auto;
+  }
+}
+.full_layout {
+  img {
+    width:auto;
+    max-width:100%;
+    height:auto;
+    display:block;
+    border:1px solid #ededed;
+  }
+  a {
+    text-decoration:none;
+    color:#000;
+    &:hover {
+      color:#FF5B33;
+    }
+  }
+}

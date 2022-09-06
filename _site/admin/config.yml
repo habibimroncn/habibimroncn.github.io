@@ -38,6 +38,7 @@ collections:
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
           - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/about/' }
           - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
+          - { label: 'Main Class', name: 'main_class', widget: 'hidden', default: 'about' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: '404 Page'
         name: '404'
@@ -47,6 +48,7 @@ collections:
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
           - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/404.html' }
           - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
+          - { label: 'Main Class', name: 'main_class', widget: 'hidden', default: 'error_not_found' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
       - label: 'Snippet Page'
         name: 'snippet'
@@ -54,8 +56,9 @@ collections:
         fields:
           - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
           - { label: 'Title', name: 'title', widget: 'hidden', default: 'About' }
-          - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/snippet/' }
+          - { label: 'Permalink', name: 'permalink', widget: 'hidden', default: '/snippets/' }
           - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
+          - { label: 'Main Class', name: 'main_class', widget: 'hidden', default: 'lists_of_snippet' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'config'
     label: 'Config'
@@ -97,7 +100,7 @@ collections:
               - { label: Icon, name: icon, widget: string }
   - name: 'snippet'
     label: 'Snippet'
-    folder: 'snippet/'
+    folder: '_snippets/'
     create: true
     slug: '{{slug}}'
     editor:
@@ -107,4 +110,5 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'string' }
       - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
+      - { label: 'Main Class', name: 'main_class', widget: 'hidden', default: 'snippet' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
