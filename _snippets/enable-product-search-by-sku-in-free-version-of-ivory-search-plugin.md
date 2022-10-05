@@ -9,4 +9,8 @@ main_class: snippet
 
 
 
-If you use this plugin: <https://wordpress.org/plugins/add-search-to-menu/> and want to activate the **product search feature by SKU** without having to use the premium one, then you can use the file I attached https://drive.google.com/file/d/1Hudj0XNFLkmuJVgSPpiUDG5ioefGmUXU/view?usp=sharing. Extract the file and copy it to the root folder of the theme you are using. Good luck.
+If you use this plugin: <https://wordpress.org/plugins/add-search-to-menu/> and want to activate the **product search feature by SKU** without having to use the premium one, then you can use the file I attached <https://drive.google.com/file/d/1Hudj0XNFLkmuJVgSPpiUDG5ioefGmUXU/view?usp=sharing>. 
+
+Extract the file and copy it to the root folder of the theme you are using. 
+
+Good luck.
