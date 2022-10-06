@@ -1,12 +1,12 @@
 ---
-layout: full
+layout: snippet
 title: Sort WooCommerce Products by SKU
 permalink: /snippet/sort-woocommerce-products-by-sku/
 seo_description: Sort WooCommerce Products by SKU
 main_class: snippet
+date: 2022-10-05 08:30
 ---
-## Sort WooCommerce Products by SKU
-<br>
+
 {% highlight php %}
 function custom_add_sku_sorting( $args ) {
 $orderby_value = isset( $_GET['orderby'] ) ? wc_clean( $_GET['orderby'] ) : apply_filters( 'woocommerce_default_catalog_orderby', get_option( 'woocommerce_default_catalog_orderby' ) );

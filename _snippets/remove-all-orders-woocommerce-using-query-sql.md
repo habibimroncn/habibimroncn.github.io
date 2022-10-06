@@ -1,12 +1,12 @@
 ---
-layout: full
+layout: snippet
 title: Remove all orders Woocommerce using Query SQL
 permalink: /snippet/remove-all-orders-woocommerce-using-query-sql
 seo_description: Remove all orders Woocommerce using Query SQL
 main_class: snippet
+date: 2022-09-20 21:00
 ---
-## Remove all orders Woocommerce using Query SQL
-<br>
+
 {% highlight php %}
 DELETE FROM {table_prefix}_woocommerce_order_itemmeta;
 DELETE FROM {table_prefix}_woocommerce_order_items;

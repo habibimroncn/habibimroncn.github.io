@@ -23,4 +23,14 @@
  </entry>
  {% endfor %}
 
+ {% for snippet in site.snippets %}
+ <entry>
+   <title>{{ snippet.title }}</title>
+   <link href="{{ site.url }}{{ snippet.url }}"/>
+   <updated>{{ snippet.date | date_to_xmlschema }}</updated>
+   <id>{{ site.url }}{{ snippet.id }}</id>
+   <content type="html">{{ snippet.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+
 </feed>

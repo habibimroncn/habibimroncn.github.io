@@ -1,16 +1,11 @@
 ---
-layout: full
+layout: snippet
 title: WOOF - WooCommerce Products Filter - Fixing Price Filter
 permalink: /snippet/woof-wc-products-filter-fixing-price-filter/
 seo_description: WOOF - WooCommerce Products Filter - Fixing Price Filter
 main_class: snippet
+date: 2022-08-21 20:00
 ---
-
-## Plugin : WOOF - WooCommerce Products Filter by realmag777
-## Version : 2.2.9.2
-<br>
-
-WOOF - WooCommerce Products Filter - Fixing Price Filter
 
 ### woocommerce-products-filter/index.php
 

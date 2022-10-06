@@ -98,17 +98,18 @@ collections:
               - { label: Type, name: type, widget: string }
               - { label: URL, name: url, widget: string }
               - { label: Icon, name: icon, widget: string }
-  - name: 'snippet'
-    label: 'Snippet'
+  - name: 'snippets'
+    label: 'Snippets'
     folder: '_snippets/'
     create: true
     slug: '{{slug}}'
     editor:
       preview: false
     fields:
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'full' }
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'snippet' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Permalink', name: 'permalink', widget: 'string' }
       - { label: 'SEO - Description', name: 'seo_description', widget: 'string' }
       - { label: 'Main Class', name: 'main_class', widget: 'hidden', default: 'snippet' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Body', name: 'body', widget: 'markdown' }

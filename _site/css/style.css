@@ -277,7 +277,7 @@ button.btn, input.btn {
   font-size: 14px;
   margin-top: 2em;
   border-top: 1px solid #efefef;
-  padding: 1em 0; }
+  padding: 16px 24px; }
   .site-footer p {
     font-size: 12px;
     font-weight: 600;
@@ -684,3 +684,8 @@ img.img-responsive {
   color: #000; }
   .full_layout a:hover {
     color: #FF5B33; }
+
+.header-container {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  border-bottom: 1px solid #efefef; }

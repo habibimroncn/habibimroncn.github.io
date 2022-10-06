@@ -1,0 +1,19 @@
+{% include header.html %}
+  <div class="main container snippet {% if page.main_class %}{{ page.main_class }}{% endif %}">
+  <article class="full_layout">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {% if page.title %}
+            <div class="header-container">
+              <h2 class="snippet title">{{ page.title }}</h2>
+            </div>
+          {% endif %}
+          <div class="content-container">
+            {{ content }}
+          </div>  
+        </div>
+      </div>
+    </div>
+  </article>
+{% include footer.html %}

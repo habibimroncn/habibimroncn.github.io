@@ -25,5 +25,14 @@
         {% endfor %}
       </item>
     {% endfor %}
+    {% for snippet in site.snippets limit:10 %}
+      <item>
+        <title>{{ snippet.title | xml_escape }}</title>
+        <description>{{ snippet.content | xml_escape }}</description>
+        <pubDate>{{ snippet.date | date_to_rfc822 }}</pubDate>
+        <link>{{ snippet.url | prepend: site.baseurl | prepend: site.url }}</link>
+        <guid isPermaLink="true">{{ snippet.url | prepend: site.baseurl | prepend: site.url }}</guid>
+      </item>
+    {% endfor %}
   </channel>
 </rss>

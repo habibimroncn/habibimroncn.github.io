@@ -4,9 +4,9 @@
   <!-- Meta -->
   <meta charset="utf-8">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <title>Custom Calculator - Hello. I'm Habib Nugroho.</title>
-  <meta name="title" content="Custom Calculator - Hello. I'm Habib Nugroho.">
-  <meta name="description" content="I'm a software developer from Indonesia creating useful things for the web. Focus on WordPress, Shopify, and Laravel.">
+  <title>Sort WooCommerce Products by SKU - Hello. I'm Habib Nugroho.</title>
+  <meta name="title" content="Sort WooCommerce Products by SKU - Hello. I'm Habib Nugroho.">
+  <meta name="description" content="Sort WooCommerce Products by SKU">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta content="yes" name="apple-mobile-web-app-capable">
@@ -14,16 +14,16 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://localhost:4000">
-  <meta property="og:title" content="Custom Calculator">
-  <meta property="og:description" content="I'm a software developer from Indonesia creating useful things for the web. Focus on WordPress, Shopify, and Laravel.">
+  <meta property="og:url" content="http://localhost:4000/snippet/sort-woocommerce-products-by-sku/">
+  <meta property="og:title" content="Sort WooCommerce Products by SKU">
+  <meta property="og:description" content="Sort WooCommerce Products by SKU">
   <meta property="og:image" content="http://localhost:4000/img/logo_bg.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="http://localhost:4000">
-  <meta property="twitter:title" content="Custom Calculator">
-  <meta property="twitter:description" content="I'm a software developer from Indonesia creating useful things for the web. Focus on WordPress, Shopify, and Laravel.">
+  <meta property="twitter:url" content="http://localhost:4000/snippet/sort-woocommerce-products-by-sku/">
+  <meta property="twitter:title" content="Sort WooCommerce Products by SKU">
+  <meta property="twitter:description" content="Sort WooCommerce Products by SKU">
   <meta property="twitter:image" content="http://localhost:4000/img/logo_bg.png">
 
   <!-- RSS -->
@@ -76,20 +76,43 @@
   </nav>
   
 
-  <div class="main container">
-  <article>
+  <div class="main container snippet snippet">
+  <article class="full_layout">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-
+        <div class="col-md-12">
           
+            <div class="header-container">
+              <h2 class="snippet title">Sort WooCommerce Products by SKU</h2>
+            </div>
+          
+          <div class="content-container">
+            
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="n">custom_add_sku_sorting</span><span class="p">(</span> <span class="nv">$args</span> <span class="p">)</span> <span class="p">{</span>
+<span class="nv">$orderby_value</span> <span class="o">=</span> <span class="k">isset</span><span class="p">(</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'orderby'</span><span class="p">]</span> <span class="p">)</span> <span class="o">?</span> <span class="nf">wc_clean</span><span class="p">(</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'orderby'</span><span class="p">]</span> <span class="p">)</span> <span class="o">:</span> <span class="nf">apply_filters</span><span class="p">(</span> <span class="s1">'woocommerce_default_catalog_orderby'</span><span class="p">,</span> <span class="nf">get_option</span><span class="p">(</span> <span class="s1">'woocommerce_default_catalog_orderby'</span> <span class="p">)</span> <span class="p">);</span>
 
+<span class="k">if</span> <span class="p">(</span> <span class="s1">'sku'</span> <span class="o">==</span> <span class="nv">$orderby_value</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="nv">$args</span><span class="p">[</span><span class="s1">'orderby'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'meta_value'</span><span class="p">;</span>
+	<span class="nv">$args</span><span class="p">[</span><span class="s1">'order'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'asc'</span><span class="p">;</span> <span class="c1">// lists SKUs alphabetically 0-9, a-z; change to desc for reverse alphabetical
+</span>
+	<span class="nv">$args</span><span class="p">[</span><span class="s1">'meta_key'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'_sku'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nv">$args</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">add_filter</span><span class="p">(</span> <span class="s1">'woocommerce_get_catalog_ordering_args'</span><span class="p">,</span> <span class="s1">'custom_add_sku_sorting'</span> <span class="p">);</span>
 
+<span class="k">function</span> <span class="n">custom_sku_sorting_orderby</span><span class="p">(</span> <span class="nv">$sortby</span> <span class="p">)</span> <span class="p">{</span>
+<span class="nv">$sortby</span><span class="p">[</span><span class="s1">'sku'</span><span class="p">]</span> <span class="o">=</span> <span class="nf">__</span><span class="p">(</span> <span class="s1">'Sort by SKU'</span><span class="p">,</span> <span class="s1">'textdomain'</span> <span class="p">);</span>
+<span class="k">return</span> <span class="nv">$sortby</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">add_filter</span><span class="p">(</span> <span class="s1">'woocommerce_catalog_orderby'</span><span class="p">,</span> <span class="s1">'custom_sku_sorting_orderby'</span> <span class="p">);</span>
+<span class="nf">add_filter</span><span class="p">(</span> <span class="s1">'woocommerce_default_catalog_orderby_options'</span><span class="p">,</span> <span class="s1">'custom_sku_sorting_orderby'</span> <span class="p">);</span></code></pre></figure>
+
+          </div>  
         </div>
       </div>
     </div>
   </article>
-
 
     <footer class="site-footer">
       <div class="container">
