@@ -7,6 +7,3 @@ gem "jekyll-paginate"
 gem "jekyll-feed"
 gem "jekyll-sitemap"
 gem "webrick", "~> 1.7"
-group :jekyll_plugins do
-  gem 'jekyll-pwa-plugin', "= 2.2.3"
-end

@@ -18,6 +18,7 @@ email: 'habibimron1508@gmail.com'
 description: "I'm a software developer from Indonesia creating useful things for the web. Focus on WordPress, Shopify, and Laravel."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://habibimroncn.github.io" # the base hostname & protocol for your site, e.g. https://example.com
+name: "habibimroncn"
 #twitter_username: 'Hab_15'
 #github_username: 'habibimroncn'
 #medium_username: ''
@@ -33,27 +34,12 @@ markdown: kramdown
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-pwa-plugin
 
 ############################################################
 # Site configuration for the Jekyll 3 Pagination Gem
 # The values here represent the defaults if nothing is set
 paginate: 5
 paginate_path: "/page/:num/"
-
-pwa:
-  enabled: true # Optional
-  sw_src_filepath: service-worker.js # Optional
-  sw_dest_filename: service-worker.js # Optional
-  dest_js_directory: js # Required
-  precache_recent_posts_num: 5 # Optional
-  precache_glob_directory: / # Optional
-  precache_glob_patterns: # Optional
-    - "{js,css,font}/**/*.{js,css,eot,svg,ttf,woff}"
-    - index.html
-  precache_glob_ignores: # Optional
-    - sw-register.js
-    - "font/**/*"
 
 # pagination:
   
