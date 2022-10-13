@@ -6,7 +6,9 @@ seo_description: 'Lists of Snippets'
 main_class: lists_of_snippet
 ---
 
-Below is a list of snippets :
+<div class="heading_center">
+  <h2><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Snippets <i class="fa fa-long-arrow-left" aria-hidden="true"></i></h2>
+</div>
 
 {% for snippet in site.snippets %}
   <p>
