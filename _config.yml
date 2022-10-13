@@ -27,6 +27,8 @@ permalink: /:categories/:year/:month/:day/:title:output_ext
 collections:
   snippets:
     output: true
+  blogs:
+    output: true
 
 # Build settings
 markdown: kramdown
