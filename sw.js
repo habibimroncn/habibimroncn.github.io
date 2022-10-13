@@ -37,7 +37,9 @@ workbox.precaching.precacheAndRoute([
   { url: '/', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' },
   { url: '/about', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' },
   { url: '/snippets', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' },
-  { url: '/css/style.css', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' }
+  { url: '/blog', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' },
+  { url: '/css/style.css', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' },
+  { url: '/css/font-awesome-4.7.0/css/font-awesome.min.css', revision: '{{ site.time | date: "%Y%m%d%H%M" }}' }
 ])
 
 registerRoute(

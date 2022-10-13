@@ -5,3 +5,5 @@ items:
     url: /about
   - text: Snippets
     url: /snippets
+  - text: Blog
+    url: /blog
