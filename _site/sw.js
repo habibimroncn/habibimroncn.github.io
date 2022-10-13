@@ -36,12 +36,12 @@ workbox.precaching.precacheAndRoute([
   { url: '/snippet/woof-wc-products-filter-fixing-price-filter/', revision: '2022-08-21' },
   { url: '/snippet/remove-all-orders-woocommerce-using-query-sql', revision: '2022-09-20' },
   { url: '/snippet/sort-woocommerce-products-by-sku/', revision: '2022-10-05' },
-  { url: '/', revision: '202210131142' },
-  { url: '/about', revision: '202210131142' },
-  { url: '/snippets', revision: '202210131142' },
-  { url: '/blog', revision: '202210131142' },
-  { url: '/css/style.css', revision: '202210131142' },
-  { url: '/css/font-awesome-4.7.0/css/font-awesome.min.css', revision: '202210131142' }
+  { url: '/', revision: '202210132150' },
+  { url: '/about', revision: '202210132150' },
+  { url: '/snippets', revision: '202210132150' },
+  { url: '/blog', revision: '202210132150' },
+  { url: '/css/style.css', revision: '202210132150' },
+  { url: '/css/font-awesome-4.7.0/css/font-awesome.min.css', revision: '202210132150' }
 ])
 
 registerRoute(

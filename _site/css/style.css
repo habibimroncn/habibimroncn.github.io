@@ -708,3 +708,10 @@ img.img-responsive {
     text-align: center;
     font-weight: 600;
     text-transform: uppercase; }
+
+.content-container {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word; }
