@@ -7,9 +7,9 @@ seo_description: How to Add Image Preview to File Upload Field for GravityForm
 main_class: snippet
 date: 2022-12-19T01:09:00.415Z
 ---
-I updated the tutorial featuring preview image upload for GravityForm from this link. For recent versions of gravityform use the function with variable update. So I just added the latest javascript function to be able to display those thumbnails.
+I updated the tutorial featuring preview image upload for GravityForm from this link <https://websitedepot.com/gravityforms-how-to-add-image-preview-to-file-upload-field/>. For recent versions of gravityform use the function with variable update. So I just added the latest javascript function to be able to display those thumbnails.
 
-```
+{% highlight php %}
 function wd_gravity_image_thumb_upload() {
     
 	// change this to your page ID
@@ -76,4 +76,4 @@ function wd_gravity_image_thumb_upload() {
     }
 
 add_action('wp_head','wd_gravity_image_thumb_upload');
-```
+{% highlight php %}
