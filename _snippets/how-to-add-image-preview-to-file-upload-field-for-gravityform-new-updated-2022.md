@@ -76,4 +76,4 @@ function wd_gravity_image_thumb_upload() {
     }
 
 add_action('wp_head','wd_gravity_image_thumb_upload');
-{% highlight php %}
+{% endhighlight %}
