@@ -19,12 +19,12 @@ collections:
       - { label: 'Categories', name: 'categories', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'string' }
       - { label: 'Featured Image', name: 'featured_image', widget: 'image', choose_url: true, default: "/img/posts/default_image.jpg" }
-      - { label: 'Project Link', name: 'project_link', widget: 'string' }
-      - { label: 'Button Icon', name: 'button_icon', widget: 'string' }
-      - { label: 'Button Text', name: 'button_text', widget: 'string' }
-      - { label: 'Lead Text', name: 'lead_text', widget: 'text' }
+      - { label: 'Project Link', name: 'project_link', widget: 'string', required: false }
+      - { label: 'Button Icon', name: 'button_icon', widget: 'string', required: false }
+      - { label: 'Button Text', name: 'button_text', widget: 'string', required: false }
+      - { label: 'Lead Text', name: 'lead_text', widget: 'text', required: false }
       - { label: 'Status', name: 'status', widget: 'select', options: ["publish", "draft"] }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
   - name: 'pages'
     label: 'Pages'
     editor:
