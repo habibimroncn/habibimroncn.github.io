@@ -3,7 +3,8 @@
 
   new WOW().init();
 
-  const handleSubmit = (event) => {
+  /*
+    const handleSubmit = (event) => {
     event.preventDefault();
   
     const myForm = event.target;
@@ -21,5 +22,6 @@
   document
     .querySelector("form")
     .addEventListener("submit", handleSubmit);
+    */
   
 })();
