@@ -8,7 +8,7 @@ date: 2023-07-10T08:04:40.672Z
 ---
 A simple way to delete a product image if the product is permanently deleted.
 
-```php
+{% highlight php %}
 function get_current_attachment_image($postid){
 	global $wpdb;
 	
@@ -40,6 +40,6 @@ function wc_rm_img($post_id, $post){
     }
 	get_current_attachment_image($post_id);
 }
-```
+{% endhighlight %}
 
 Copy the code to functions.php or use the "***Code Snippets***" plugin. Good luck.

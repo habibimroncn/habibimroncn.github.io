@@ -99,8 +99,7 @@
 
 <span class="k">if</span> <span class="p">(</span> <span class="s1">'sku'</span> <span class="o">==</span> <span class="nv">$orderby_value</span> <span class="p">)</span> <span class="p">{</span>
 	<span class="nv">$args</span><span class="p">[</span><span class="s1">'orderby'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'meta_value'</span><span class="p">;</span>
-	<span class="nv">$args</span><span class="p">[</span><span class="s1">'order'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'asc'</span><span class="p">;</span> <span class="c1">// lists SKUs alphabetically 0-9, a-z; change to desc for reverse alphabetical
-</span>
+	<span class="nv">$args</span><span class="p">[</span><span class="s1">'order'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'asc'</span><span class="p">;</span> <span class="c1">// lists SKUs alphabetically 0-9, a-z; change to desc for reverse alphabetical</span>
 	<span class="nv">$args</span><span class="p">[</span><span class="s1">'meta_key'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'_sku'</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="k">return</span> <span class="nv">$args</span><span class="p">;</span>

@@ -33,6 +33,10 @@
 <lastmod>2022-08-20T23:20:00+07:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/development/2023/06/19/payton.html</loc>
+<lastmod>2023-06-19T08:38:24+07:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/snippet/enable-product-search-by-sku-in-free-version-of-ivory-search-plugin</loc>
 <lastmod>2022-08-20T23:11:00+07:00</lastmod>
 </url>
@@ -47,6 +51,18 @@
 <url>
 <loc>http://localhost:4000/snippet/sort-woocommerce-products-by-sku/</loc>
 <lastmod>2022-10-05T08:30:00+07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/snippet/how-to-add-image-preview-to-file-upload-for-gravityform</loc>
+<lastmod>2022-12-19T08:09:00+07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/snippet/backup-wordpress-using-wp-cli</loc>
+<lastmod>2023-07-07T09:32:36+07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/snippet/woocommerce-remove-product-image</loc>
+<lastmod>2023-07-10T15:04:40+07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
@@ -65,6 +81,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/admin/</loc>
-<lastmod>2022-10-05T10:07:27+07:00</lastmod>
+<lastmod>2023-07-11T10:00:26+07:00</lastmod>
 </url>
 </urlset>

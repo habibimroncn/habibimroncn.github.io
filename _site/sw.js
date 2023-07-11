@@ -6,7 +6,7 @@ const { CacheableResponse } = workbox.cacheableResponse;
 
 workbox.core.setCacheNameDetails({
   prefix: 'habibimroncn.github.io',
-  suffix: '2022-10'
+  suffix: '2023-07'
 });
 
 registerRoute(
@@ -25,6 +25,7 @@ registerRoute(
 )
 
 workbox.precaching.precacheAndRoute([
+  { url: '/development/2023/06/19/payton.html', revision: '2023-06-19' },
   { url: '/development/2022/08/20/aviatorfarms-themes.html', revision: '2022-08-20' },
   { url: '/development/2022/08/20/customcalculator-themes.html', revision: '2022-08-20' },
   { url: '/development/2022/08/20/edgedatasolutions-themes.html', revision: '2022-08-20' },
@@ -36,12 +37,15 @@ workbox.precaching.precacheAndRoute([
   { url: '/snippet/woof-wc-products-filter-fixing-price-filter/', revision: '2022-08-21' },
   { url: '/snippet/remove-all-orders-woocommerce-using-query-sql', revision: '2022-09-20' },
   { url: '/snippet/sort-woocommerce-products-by-sku/', revision: '2022-10-05' },
-  { url: '/', revision: '202210132150' },
-  { url: '/about', revision: '202210132150' },
-  { url: '/snippets', revision: '202210132150' },
-  { url: '/blog', revision: '202210132150' },
-  { url: '/css/style.css', revision: '202210132150' },
-  { url: '/css/font-awesome-4.7.0/css/font-awesome.min.css', revision: '202210132150' }
+  { url: '/snippet/how-to-add-image-preview-to-file-upload-for-gravityform', revision: '2022-12-19' },
+  { url: '/snippet/backup-wordpress-using-wp-cli', revision: '2023-07-07' },
+  { url: '/snippet/woocommerce-remove-product-image', revision: '2023-07-10' },
+  { url: '/', revision: '202307111145' },
+  { url: '/about', revision: '202307111145' },
+  { url: '/snippets', revision: '202307111145' },
+  { url: '/blog', revision: '202307111145' },
+  { url: '/css/style.css', revision: '202307111145' },
+  { url: '/css/font-awesome-4.7.0/css/font-awesome.min.css', revision: '202307111145' }
 ])
 
 registerRoute(
