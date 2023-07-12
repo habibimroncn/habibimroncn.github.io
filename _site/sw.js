@@ -40,12 +40,12 @@ workbox.precaching.precacheAndRoute([
   { url: '/snippet/how-to-add-image-preview-to-file-upload-for-gravityform', revision: '2022-12-19' },
   { url: '/snippet/backup-wordpress-using-wp-cli', revision: '2023-07-07' },
   { url: '/snippet/woocommerce-remove-product-image', revision: '2023-07-10' },
-  { url: '/', revision: '202307111145' },
-  { url: '/about', revision: '202307111145' },
-  { url: '/snippets', revision: '202307111145' },
-  { url: '/blog', revision: '202307111145' },
-  { url: '/css/style.css', revision: '202307111145' },
-  { url: '/css/font-awesome-4.7.0/css/font-awesome.min.css', revision: '202307111145' }
+  { url: '/', revision: '202307121406' },
+  { url: '/about', revision: '202307121406' },
+  { url: '/snippets', revision: '202307121406' },
+  { url: '/blog', revision: '202307121406' },
+  { url: '/css/style.css', revision: '202307121406' },
+  { url: '/css/font-awesome-4.7.0/css/font-awesome.min.css', revision: '202307121406' }
 ])
 
 registerRoute(

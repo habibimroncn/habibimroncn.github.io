@@ -12,7 +12,8 @@ main_class: lists_of_blog
 
 {% assign blog_data = site.blogs | sort:'title' %}
 {% for blog in blog_data %}
-  <p>
-    <a href="{{ blog.url }}"><i class="fa fa-terminal" aria-hidden="true"></i> {{ blog.title }}</a>
-  </p>
+  <div class="snippet_lists_container on_blog">
+    <div class="snippet_lists_icon">{{ forloop.index }}.</div>
+    <div class="snippet_lists_content"><a href="{{ blog.url }}">{{ blog.title }}</a></div>
+  </div>
 {% endfor %}

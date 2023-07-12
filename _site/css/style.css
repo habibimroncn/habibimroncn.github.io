@@ -711,3 +711,16 @@ img.img-responsive {
 
 .content-container {
   word-wrap: break-word; }
+
+.snippet_lists_container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 12px; }
+  .snippet_lists_container .snippet_lists_icon {
+    margin-right: 7px; }
+  .snippet_lists_container i {
+    font-size: 1.3em;
+    line-height: normal; }
+  .snippet_lists_container a {
+    font-size: 1.3em;
+    line-height: normal; }

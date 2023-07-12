@@ -12,7 +12,8 @@ main_class: lists_of_snippet
 
 {% assign snippet_data = site.snippets | sort:'title' %}
 {% for snippet in snippet_data %}
-  <p>
-    <a href="{{ snippet.url }}"><i class="fa fa-terminal" aria-hidden="true"></i> {{ snippet.title }}</a>
-  </p>
+  <div class="snippet_lists_container">
+    <div class="snippet_lists_icon">{{ forloop.index }}.</div>
+    <div class="snippet_lists_content"><a href="{{ snippet.url }}">{{ snippet.title }}</a></div>
+  </div>
 {% endfor %}

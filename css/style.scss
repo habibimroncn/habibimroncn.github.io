@@ -564,6 +564,19 @@ img.img-responsive {
 .content-container {
   word-wrap: break-word;
 }
-#portfolio{
-// display:none !important;
+.snippet_lists_container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+  .snippet_lists_icon {
+    margin-right: 7px;
+  }
+  i{
+    font-size: 1.3em;
+    line-height: normal;
+  }
+  a{
+    font-size: 1.3em;
+    line-height: normal;
+  }
 }
