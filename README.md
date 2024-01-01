@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8bd8e8da-c87f-4c05-8fed-20066ad36fd9/deploy-status)](https://app.netlify.com/sites/leafy-hotteok-b61f0b/deploys)
+
 ## Site Powered by Jekyll
 
 A minimalist, responsive portfolio theme for [Jekyll](http://jekyllrb.com/) with Bootstrap.
