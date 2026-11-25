@@ -139,10 +139,10 @@
                 </nav>
 
                 <div class="flex items-center gap-2">
-                    <!-- Language Toggle -->
+                    <!-- Language Toggle via Links (?lang=id / ?lang=en) -->
                     <div class="inline-flex items-center text-xs border border-stone-200 dark:border-stone-800 rounded-lg p-0.5 bg-stone-100/90 dark:bg-stone-900" role="group" aria-label="Language Switcher">
-                        <button type="button" data-lang-btn="id" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 shadow-xs">ID</button>
-                        <button type="button" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">EN</button>
+                        <a href="?lang=id" data-lang-btn="id" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 shadow-xs">ID</a>
+                        <a href="?lang=en" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">EN</a>
                     </div>
 
                     <!-- Theme Toggle -->
@@ -451,7 +451,7 @@
     <footer class="max-w-5xl mx-auto px-5 sm:px-8 pb-12 pt-6 border-t border-stone-200/70 dark:border-stone-800/70 lang-fade">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone-500 dark:text-stone-400">
             <span data-i18n="footer_left">Habib Nugroho — Web Developer & Praktisi IT Indonesia</span>
-            <span>© <span id="year"></span> Habib Nugroho.</span>
+            <span>© <span id="year">2026</span> Habib Nugroho.</span>
         </div>
     </footer>
 
@@ -464,8 +464,11 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('year').textContent = new Date().getFullYear();
+        (function () {
+            const yearEl = document.getElementById('year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
 
             // Complete & Bidirectional Dictionary (ID <-> EN)
             const i18n = {
@@ -585,7 +588,37 @@
                 }
             };
 
-            let currentLang = localStorage.getItem('lang') === 'en' ? 'en' : 'id';
+            function safeGetStorage(key) {
+                try {
+                    return window.localStorage.getItem(key);
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            function safeSetStorage(key, val) {
+                try {
+                    window.localStorage.setItem(key, val);
+                } catch (e) {}
+            }
+
+            // Detect language from URL query (?lang=en / ?lang=id), URL hash (#en / #id), or localStorage
+            function getLanguageFromUrl() {
+                try {
+                    const params = new URLSearchParams(window.location.search);
+                    const queryLang = (params.get('lang') || '').toLowerCase();
+                    if (queryLang === 'en' || queryLang === 'id') {
+                        return queryLang;
+                    }
+                    const hashLang = window.location.hash.replace('#', '').toLowerCase();
+                    if (hashLang === 'en' || hashLang === 'id') {
+                        return hashLang;
+                    }
+                } catch (e) {}
+                return null;
+            }
+
+            let currentLang = getLanguageFromUrl() || (safeGetStorage('lang') === 'en' ? 'en' : 'id');
             const htmlEl = document.documentElement;
             const themeToggle = document.getElementById('theme-toggle');
             const langBtns = document.querySelectorAll('.lang-btn');
@@ -598,44 +631,67 @@
 
             // Scroll progress indicator
             window.addEventListener('scroll', () => {
+                if (!scrollProgress) return;
                 const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
                 const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
                 scrollProgress.style.width = scrolled + '%';
             }, { passive: true });
 
-            // Scroll Reveal Observer
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+            // Scroll Reveal Observer with Fallback
+            const revealEls = document.querySelectorAll('.reveal');
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
 
-            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+                revealEls.forEach(el => revealObserver.observe(el));
+            } else {
+                revealEls.forEach(el => el.classList.add('is-visible'));
+            }
 
             // Theme initialization & toggle
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            const savedTheme = safeGetStorage('theme');
+            const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
                 htmlEl.classList.add('dark');
             }
 
-            themeToggle.addEventListener('click', () => {
-                htmlEl.classList.toggle('dark');
-                localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
-            });
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    htmlEl.classList.toggle('dark');
+                    safeSetStorage('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+                });
+            }
+
+            // Sync URL parameter (?lang=id / ?lang=en) safely
+            function syncLanguageUrl(lang) {
+                if (!window.history || !window.history.replaceState) return;
+                try {
+                    const url = new URL(window.location.href);
+                    url.searchParams.set('lang', lang);
+                    window.history.replaceState({ lang: lang }, '', url.toString());
+                } catch (e) {}
+            }
 
             // Accurate Bidirectional Language Switcher
-            function applyTranslations(lang) {
+            function applyTranslations(lang, updateUrl = false) {
                 const dict = i18n[lang];
                 if (!dict) return;
 
                 currentLang = lang;
-                localStorage.setItem('lang', lang);
+                safeSetStorage('lang', lang);
                 htmlEl.setAttribute('lang', lang);
                 document.title = dict.page_title;
+
+                if (updateUrl) {
+                    syncLanguageUrl(lang);
+                }
 
                 langBtns.forEach(btn => {
                     const isActive = btn.dataset.langBtn === lang;
@@ -668,39 +724,63 @@
             }
 
             function switchLanguageWithFade(lang) {
-                if (lang === currentLang) return;
+                if (lang === currentLang) {
+                    syncLanguageUrl(lang);
+                    return;
+                }
                 const fadeTargets = document.querySelectorAll('.lang-fade');
                 fadeTargets.forEach(el => el.classList.add('switching'));
                 setTimeout(() => {
-                    applyTranslations(lang);
+                    applyTranslations(lang, true);
                     fadeTargets.forEach(el => el.classList.remove('switching'));
                 }, 140);
             }
 
             langBtns.forEach(btn => {
-                btn.addEventListener('click', () => switchLanguageWithFade(btn.dataset.langBtn));
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    switchLanguageWithFade(btn.dataset.langBtn);
+                });
+            });
+
+            // Support browser Back/Forward & hash links (#en / #id)
+            window.addEventListener('popstate', () => {
+                const urlLang = getLanguageFromUrl();
+                if (urlLang && urlLang !== currentLang) {
+                    applyTranslations(urlLang, false);
+                }
+            });
+
+            window.addEventListener('hashchange', () => {
+                const hashLang = window.location.hash.replace('#', '').toLowerCase();
+                if ((hashLang === 'en' || hashLang === 'id') && hashLang !== currentLang) {
+                    switchLanguageWithFade(hashLang);
+                }
             });
 
             // Copy Email Handler
-            copyEmailBtn.addEventListener('click', () => {
-                const tempInput = document.createElement('input');
-                tempInput.value = targetEmail;
-                document.body.appendChild(tempInput);
-                tempInput.select();
-                document.execCommand('copy');
-                document.body.removeChild(tempInput);
+            if (copyEmailBtn && toast) {
+                copyEmailBtn.addEventListener('click', () => {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = targetEmail;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
 
-                toast.classList.remove('hidden');
-                toast.classList.add('flex');
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                    toast.classList.remove('flex');
-                }, 2400);
-            });
+                    toast.classList.remove('hidden');
+                    toast.classList.add('flex');
+                    setTimeout(() => {
+                        toast.classList.add('hidden');
+                        toast.classList.remove('flex');
+                    }, 2400);
+                });
+            }
 
             // Initialize default language immediately
-            applyTranslations(currentLang);
-        });
+            const hasUrlLang = Boolean(getLanguageFromUrl());
+            applyTranslations(currentLang, hasUrlLang);
+        })();
     </script>
 </body>
 </html>
