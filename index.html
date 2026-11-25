@@ -1,9 +1,706 @@
----
-layout: home
-title: "Hello. I'm Habib Nugroho."
-main_class: main_index
-pagination: 
-  enabled: true
----
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habib Nugroho — Web Developer & Praktisi IT Indonesia</title>
+    <meta name="description" content="Praktisi IT dan Web Developer dari Indonesia. Melayani pembuatan dan perbaikan website berbasis WordPress, Shopify, Laravel, serta pengembangan web app dengan bantuan AI (Claude, ChatGPT, Gemini).">
+    <meta name="keywords" content="Habib Nugroho, Web Developer Indonesia, Jasa WordPress, Jasa Shopify, Jasa Laravel, Perbaikan Website, Praktisi IT Malang">
+    <meta name="author" content="Habib Nugroho">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hndev.id/">
 
-<!-- BLANK -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hndev.id/">
+    <meta property="og:title" content="Habib Nugroho — Web Developer & Praktisi IT">
+    <meta property="og:description" content="Pembuatan & perbaikan website (WordPress, Shopify, Laravel) serta pengembangan web app lintas teknologi dengan bantuan AI. Solusi tepat dan harga terjangkau.">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Habib Nugroho — Web Developer & Praktisi IT">
+    <meta name="twitter:description" content="Pembuatan & perbaikan website (WordPress, Shopify, Laravel) serta pengembangan web app lintas teknologi.">
+
+    <!-- Structured Data (JSON-LD SEO Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Habib Nugroho",
+      "jobTitle": "Web Developer & IT Practitioner",
+      "email": "habibimron1508@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Malang",
+        "addressRegion": "Jawa Timur",
+        "addressCountry": "ID"
+      },
+      "knowsAbout": ["WordPress", "Shopify", "Laravel", "Web Development", "Claude AI", "ChatGPT", "Google Gemini", "IT Troubleshooting"]
+    }
+    </script>
+    
+    <!-- Google Fonts: Inter & Newsreader -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        serif: ['Newsreader', 'Georgia', 'serif'],
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 7s ease-in-out infinite',
+                        'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        pulseSubtle: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.5' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Subtle Architectural Grid Background */
+        .bg-grid-pattern {
+            background-size: 36px 36px;
+            background-image: 
+                linear-gradient(to right, rgba(120, 113, 108, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(120, 113, 108, 0.06) 1px, transparent 1px);
+        }
+        .dark .bg-grid-pattern {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Smooth language fade */
+        .lang-fade {
+            transition: opacity 0.18s ease;
+        }
+        .lang-fade.switching {
+            opacity: 0.35;
+        }
+    </style>
+</head>
+<body class="bg-[#FAF9F6] text-stone-800 dark:bg-[#10100F] dark:text-stone-200 transition-colors duration-300 selection:bg-amber-700 selection:text-white dark:selection:bg-amber-400 dark:selection:text-stone-950">
+
+    <!-- Top Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-amber-600 via-stone-800 to-amber-600 dark:from-amber-400 dark:via-stone-200 dark:to-amber-400 z-50 w-0 transition-all duration-100"></div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-[#FAF9F6]/85 dark:bg-[#10100F]/85 backdrop-blur-md border-b border-stone-200/70 dark:border-stone-800/80 transition-colors">
+        <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
+            <a href="#" class="group flex items-center gap-2.5 font-semibold text-sm sm:text-base tracking-tight text-stone-900 dark:text-stone-100">
+                <span class="w-7 h-7 rounded-lg bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-900 flex items-center justify-center text-xs font-bold transition-transform duration-300 group-hover:rotate-6">
+                    HN
+                </span>
+                <span>Habib Nugroho</span>
+            </a>
+
+            <div class="flex items-center gap-4 sm:gap-7">
+                <nav class="hidden md:flex items-center gap-7 text-sm text-stone-600 dark:text-stone-400">
+                    <a href="#layanan" data-i18n="nav_services" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Layanan</a>
+                    <a href="#keahlian" data-i18n="nav_stack" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Teknologi</a>
+                    <a href="#pendekatan" data-i18n="nav_approach" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Cara Kerja</a>
+                    <a href="#kontak" data-i18n="nav_contact" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Kontak</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+                    <!-- Language Toggle -->
+                    <div class="inline-flex items-center text-xs border border-stone-200 dark:border-stone-800 rounded-lg p-0.5 bg-stone-100/90 dark:bg-stone-900" role="group" aria-label="Language Switcher">
+                        <button type="button" data-lang-btn="id" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 shadow-xs">ID</button>
+                        <button type="button" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">EN</button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" aria-label="Ganti Tema" class="p-2 rounded-lg border border-stone-200 dark:border-stone-800 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-all">
+                        <svg id="theme-icon-light" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="theme-icon-dark" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Subtle Grid & Interactive Card -->
+    <section class="relative bg-grid-pattern border-b border-stone-200/80 dark:border-stone-800/80 overflow-hidden">
+        <!-- Soft Ambient Glow -->
+        <div class="pointer-events-none absolute -top-24 right-1/4 w-96 h-96 bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-5xl mx-auto px-5 sm:px-8 pt-14 pb-20 sm:pt-20 sm:pb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Column: Intro & Copy -->
+                <div class="lg:col-span-7 lang-fade">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-stone-900 border border-stone-200/90 dark:border-stone-800 text-xs font-medium text-stone-600 dark:text-stone-300 mb-6 shadow-2xs">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-subtle"></span>
+                        <span data-i18n="hero_badge">Praktisi IT & Web Developer — Indonesia</span>
+                    </div>
+
+                    <h1 data-i18n-html="hero_title" class="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-stone-900 dark:text-stone-100 leading-[1.15] mb-6">
+                        Membangun dan memperbaiki situs web yang andal, <span class="italic text-amber-700 dark:text-amber-400">efisien, dan tepat sasaran.</span>
+                    </h1>
+
+                    <div class="space-y-4 text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-8">
+                        <p data-i18n-html="hero_p1">
+                            Halo, saya <strong class="font-semibold text-stone-900 dark:text-stone-100">Habib Nugroho</strong>, seorang programmer dan praktisi IT dari Indonesia. Keahlian utama saya berfokus pada pembuatan dan pengelolaan situs berbasis <strong class="font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify, dan Laravel</strong>.
+                        </p>
+                        <p data-i18n-html="hero_p2">
+                            Dengan memanfaatkan AI seperti <strong class="font-medium text-stone-900 dark:text-stone-100">Claude, ChatGPT, dan Gemini</strong> secara terarah, kini saya juga dapat membangun website maupun web app dengan berbagai bahasa atau stack teknologi sesuai keinginan Anda.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3.5">
+                        <a id="hero-email-btn" href="mailto:habibimron1508@gmail.com?subject=Konsultasi%20Website%20%2F%20IT" class="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-900 text-sm font-medium shadow-sm hover:shadow transition-all duration-200 hover:-translate-y-0.5">
+                            <span data-i18n="hero_cta_email">Diskusi via Email</span>
+                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#layanan" data-i18n="hero_cta_services" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white/80 dark:bg-stone-900/80 border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 text-stone-700 dark:text-stone-300 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5">
+                            Lihat Layanan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Capability Overview Card -->
+                <div class="lg:col-span-5">
+                    <div class="animate-float-slow rounded-2xl bg-white/95 dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 p-6 shadow-lg shadow-stone-900/5 dark:shadow-black/30 backdrop-blur-sm lang-fade">
+                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-stone-100 dark:border-stone-800">
+                            <span data-i18n="card_header" class="text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500">Ringkasan Keahlian</span>
+                            <span class="text-xs font-medium text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 px-2.5 py-0.5 rounded-md border border-amber-200/60 dark:border-amber-800/50" data-i18n="card_badge">Siap Membantu</span>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3.5 group">
+                                <div class="w-9 h-9 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/40 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                                </div>
+                                <div>
+                                    <h2 data-i18n="card_item1_title" class="text-sm font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify & Laravel</h2>
+                                    <p data-i18n="card_item1_desc" class="text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-relaxed">Pembuatan website bisnis, toko online, hingga sistem web kustom.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5 group">
+                                <div class="w-9 h-9 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/40 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                </div>
+                                <div>
+                                    <h2 data-i18n="card_item2_title" class="text-sm font-semibold text-stone-900 dark:text-stone-100">Web & App Lintas Stack + AI</h2>
+                                    <p data-i18n="card_item2_desc" class="text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-relaxed">Fleksibel memakai Claude, ChatGPT & Gemini sesuai kebutuhan proyek.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3.5 group">
+                                <div class="w-9 h-9 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/40 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                                </div>
+                                <div>
+                                    <h2 data-i18n="card_item3_title" class="text-sm font-semibold text-stone-900 dark:text-stone-100">Perbaikan & Solusi IT</h2>
+                                    <p data-i18n="card_item3_desc" class="text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-relaxed">Troubleshooting error, optimasi kecepatan, dan harga bersahabat.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-5 sm:px-8">
+        
+        <!-- Layanan Section (Interactive Cards with Hover Lift) -->
+        <section id="layanan" class="py-16 sm:py-24 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
+            <div class="reveal max-w-2xl mb-12">
+                <p data-i18n="srv_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2">
+                    Layanan Utama
+                </p>
+                <h2 data-i18n="srv_heading" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100 mb-3">
+                    Solusi pembuatan dan perbaikan situs untuk berbagai kebutuhan
+                </h2>
+                <p data-i18n="srv_sub" class="text-sm sm:text-base text-stone-600 dark:text-stone-400">
+                    Baik memulai dari nol maupun merapikan sistem yang sudah berjalan, setiap pekerjaan difokuskan pada hasil yang stabil dan mudah digunakan.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="reveal group rounded-2xl p-6 sm:p-7 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-600/50 dark:hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-900/5 dark:hover:shadow-black/40">
+                    <div class="w-11 h-11 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 data-i18n="srv1_title" class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2.5">
+                        WordPress, Shopify & Laravel
+                    </h3>
+                    <p data-i18n="srv1_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                        Pembuatan website profil usaha, toko online siap jualan, hingga aplikasi web kustom berbasis Laravel dengan struktur rapi dan panel admin yang mudah Anda kelola.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reveal group rounded-2xl p-6 sm:p-7 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-600/50 dark:hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-900/5 dark:hover:shadow-black/40" style="transition-delay: 80ms;">
+                    <div class="w-11 h-11 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 data-i18n="srv2_title" class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2.5">
+                        Website & Web App Fleksibel
+                    </h3>
+                    <p data-i18n="srv2_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                        Mengombinasikan keahlian coding dengan Claude, ChatGPT, dan Gemini, saya dapat mengembangkan situs atau web app menggunakan stack apa pun sesuai spesifikasi yang Anda minta.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal group rounded-2xl p-6 sm:p-7 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-600/50 dark:hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-900/5 dark:hover:shadow-black/40" style="transition-delay: 160ms;">
+                    <div class="w-11 h-11 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+                    </div>
+                    <h3 data-i18n="srv3_title" class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2.5">
+                        Perbaikan Situs & Bantuan IT
+                    </h3>
+                    <p data-i18n="srv3_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                        Mengatasi website error, bug tampilan, loading lambat, pemindahan hosting/domain, serta berbagai kendala teknis IT harian dengan solusi cepat dan biaya terjangkau.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teknologi & AI Ecosystem (Interactive Filter / Showcase) -->
+        <section id="keahlian" class="py-16 sm:py-24 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
+            <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+                <div>
+                    <p data-i18n="tech_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2">
+                        Platform & Ekosistem AI
+                    </p>
+                    <h2 data-i18n="tech_heading" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100">
+                        Perangkat yang saya gunakan setiap hari
+                    </h2>
+                </div>
+                <p data-i18n="tech_note" class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 max-w-xs">
+                    Memadukan fondasi pemrograman yang kuat dengan asistensi AI modern.
+                </p>
+            </div>
+
+            <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
+                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all hover:-translate-y-1 text-center">
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">WordPress</div>
+                    <div data-i18n="tag_cms" class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">CMS & Custom Theme</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all hover:-translate-y-1 text-center">
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Shopify</div>
+                    <div data-i18n="tag_ecom" class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">E-Commerce & Liquid</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all hover:-translate-y-1 text-center">
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Laravel</div>
+                    <div data-i18n="tag_php" class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">PHP Web Application</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all hover:-translate-y-1 text-center">
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Claude</div>
+                    <div data-i18n="tag_ai_arch" class="text-[11px] text-amber-700 dark:text-amber-400 mt-1">AI Code & Architecture</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all hover:-translate-y-1 text-center">
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">ChatGPT</div>
+                    <div data-i18n="tag_ai_logic" class="text-[11px] text-amber-700 dark:text-amber-400 mt-1">AI Logic & Debugging</div>
+                </div>
+                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all hover:-translate-y-1 text-center">
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Gemini</div>
+                    <div data-i18n="tag_ai_multi" class="text-[11px] text-amber-700 dark:text-amber-400 mt-1">AI Research & Multi-Stack</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cara Kerja / Keunggulan -->
+        <section id="pendekatan" class="py-16 sm:py-24 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
+            <div class="reveal max-w-2xl mb-12">
+                <p data-i18n="app_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2">
+                    Cara Kerja
+                </p>
+                <h2 data-i18n="app_heading" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100">
+                    Mengapa bekerja sama dengan saya?
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70">
+                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">01</span>
+                    <div>
+                        <h3 data-i18n="app1_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                            Solusi yang tepat guna
+                        </h3>
+                        <p data-i18n="app1_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                            Saya menganalisis kebutuhan Anda terlebih dahulu dan merekomendasikan teknologi yang paling sesuai—tidak berlebihan dan tepat sasaran.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70" style="transition-delay: 80ms;">
+                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">02</span>
+                    <div>
+                        <h3 data-i18n="app2_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                            Fleksibel dengan bantuan AI
+                        </h3>
+                        <p data-i18n="app2_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                            Dengan Claude, ChatGPT, dan Gemini, pengerjaan kode menjadi lebih cepat dan saya siap menyesuaikan AI maupun stack sesuai preferensi Anda.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70" style="transition-delay: 140ms;">
+                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">03</span>
+                    <div>
+                        <h3 data-i18n="app3_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                            Harga yang terjangkau
+                        </h3>
+                        <p data-i18n="app3_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                            Alur kerja yang efisien memungkinkan biaya pembuatan maupun perbaikan situs tetap ramah di kantong bagi personal maupun UMKM.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70" style="transition-delay: 200ms;">
+                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">04</span>
+                    <div>
+                        <h3 data-i18n="app4_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                            Komunikasi mudah dipahami
+                        </h3>
+                        <p data-i18n="app4_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                            Penjelasan progres disampaikan secara jelas tanpa istilah teknis yang membingungkan, dari tahap awal hingga website siap online.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontak Section -->
+        <section id="kontak" class="py-16 sm:py-24 lang-fade">
+            <div class="reveal relative overflow-hidden p-7 sm:p-12 rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/70 shadow-sm">
+                <div class="pointer-events-none absolute -bottom-20 -right-20 w-72 h-72 bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl"></div>
+
+                <div class="relative z-10 max-w-2xl">
+                    <p data-i18n="cnt_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-3">
+                        Mulai Konsultasi
+                    </p>
+                    <h2 data-i18n="cnt_title" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100 mb-4">
+                        Punya rencana membuat situs atau kendala IT?
+                    </h2>
+                    <p data-i18n-html="cnt_desc" class="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-8">
+                        Jika Anda ingin membuat situs baru, memperbaiki situs yang bermasalah, atau membutuhkan solusi apa pun yang berhubungan dengan IT, silakan hubungi saya di <strong class="font-semibold text-stone-900 dark:text-stone-100">habibimron1508@gmail.com</strong>. Saya akan membantu memberikan solusi yang tepat dengan harga terjangkau.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+                        <a id="direct-email-btn" href="mailto:habibimron1508@gmail.com?subject=Konsultasi%20Website%20%2F%20IT" class="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-900 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 shadow-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span data-i18n="cnt_btn_email">Hubungi via Email</span>
+                        </a>
+
+                        <button type="button" id="copy-email-btn" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 text-sm font-medium transition-all duration-200">
+                            <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                            <span data-i18n="cnt_btn_copy">Salin Alamat Email</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl mx-auto px-5 sm:px-8 pb-12 pt-6 border-t border-stone-200/70 dark:border-stone-800/70 lang-fade">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone-500 dark:text-stone-400">
+            <span data-i18n="footer_left">Habib Nugroho — Web Developer & Praktisi IT Indonesia</span>
+            <span>© <span id="year"></span> Habib Nugroho.</span>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium shadow-lg">
+        <svg class="w-4 h-4 text-emerald-400 dark:text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <span data-i18n="toast_copied">Alamat email berhasil disalin.</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Complete & Bidirectional Dictionary (ID <-> EN)
+            const i18n = {
+                id: {
+                    page_title: 'Habib Nugroho — Web Developer & Praktisi IT Indonesia',
+                    nav_services: 'Layanan',
+                    nav_stack: 'Teknologi',
+                    nav_approach: 'Cara Kerja',
+                    nav_contact: 'Kontak',
+                    hero_badge: 'Praktisi IT & Web Developer — Indonesia',
+                    hero_title: 'Membangun dan memperbaiki situs web yang andal, <span class="italic text-amber-700 dark:text-amber-400">efisien, dan tepat sasaran.</span>',
+                    hero_p1: 'Halo, saya <strong class="font-semibold text-stone-900 dark:text-stone-100">Habib Nugroho</strong>, seorang programmer dan praktisi IT dari Indonesia. Keahlian utama saya berfokus pada pembuatan dan pengelolaan situs berbasis <strong class="font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify, dan Laravel</strong>.',
+                    hero_p2: 'Dengan memanfaatkan AI seperti <strong class="font-medium text-stone-900 dark:text-stone-100">Claude, ChatGPT, dan Gemini</strong> secara terarah, kini saya juga dapat membangun website maupun web app dengan berbagai bahasa atau stack teknologi sesuai keinginan Anda.',
+                    hero_cta_email: 'Diskusi via Email',
+                    hero_cta_services: 'Lihat Layanan',
+                    card_header: 'Ringkasan Keahlian',
+                    card_badge: 'Siap Membantu',
+                    card_item1_title: 'WordPress, Shopify & Laravel',
+                    card_item1_desc: 'Pembuatan website bisnis, toko online, hingga sistem web kustom.',
+                    card_item2_title: 'Web & App Lintas Stack + AI',
+                    card_item2_desc: 'Fleksibel memakai Claude, ChatGPT & Gemini sesuai kebutuhan proyek.',
+                    card_item3_title: 'Perbaikan & Solusi IT',
+                    card_item3_desc: 'Troubleshooting error, optimasi kecepatan, dan harga bersahabat.',
+                    srv_eyebrow: 'Layanan Utama',
+                    srv_heading: 'Solusi pembuatan dan perbaikan situs untuk berbagai kebutuhan',
+                    srv_sub: 'Baik memulai dari nol maupun merapikan sistem yang sudah berjalan, setiap pekerjaan difokuskan pada hasil yang stabil dan mudah digunakan.',
+                    srv1_title: 'WordPress, Shopify & Laravel',
+                    srv1_desc: 'Pembuatan website profil usaha, toko online siap jualan, hingga aplikasi web kustom berbasis Laravel dengan struktur rapi dan panel admin yang mudah Anda kelola.',
+                    srv2_title: 'Website & Web App Fleksibel',
+                    srv2_desc: 'Mengombinasikan keahlian coding dengan Claude, ChatGPT, dan Gemini, saya dapat mengembangkan situs atau web app menggunakan stack apa pun sesuai spesifikasi yang Anda minta.',
+                    srv3_title: 'Perbaikan Situs & Bantuan IT',
+                    srv3_desc: 'Mengatasi website error, bug tampilan, loading lambat, pemindahan hosting/domain, serta berbagai kendala teknis IT harian dengan solusi cepat dan biaya terjangkau.',
+                    tech_eyebrow: 'Platform & Ekosistem AI',
+                    tech_heading: 'Perangkat yang saya gunakan setiap hari',
+                    tech_note: 'Memadukan fondasi pemrograman yang kuat dengan asistensi AI modern.',
+                    tag_cms: 'CMS & Tema Kustom',
+                    tag_ecom: 'Toko Online & Liquid',
+                    tag_php: 'Aplikasi Web PHP',
+                    tag_ai_arch: 'AI Kode & Arsitektur',
+                    tag_ai_logic: 'AI Logika & Debugging',
+                    tag_ai_multi: 'AI Riset & Lintas Stack',
+                    app_eyebrow: 'Cara Kerja',
+                    app_heading: 'Mengapa bekerja sama dengan saya?',
+                    app1_title: 'Solusi yang tepat guna',
+                    app1_desc: 'Saya menganalisis kebutuhan Anda terlebih dahulu dan merekomendasikan teknologi yang paling sesuai—tidak berlebihan dan tepat sasaran.',
+                    app2_title: 'Fleksibel dengan bantuan AI',
+                    app2_desc: 'Dengan Claude, ChatGPT, dan Gemini, pengerjaan kode menjadi lebih cepat dan saya siap menyesuaikan AI maupun stack sesuai preferensi Anda.',
+                    app3_title: 'Harga yang terjangkau',
+                    app3_desc: 'Alur kerja yang efisien memungkinkan biaya pembuatan maupun perbaikan situs tetap ramah di kantong bagi personal maupun UMKM.',
+                    app4_title: 'Komunikasi mudah dipahami',
+                    app4_desc: 'Penjelasan progres disampaikan secara jelas tanpa istilah teknis yang membingungkan, dari tahap awal hingga website siap online.',
+                    cnt_eyebrow: 'Mulai Konsultasi',
+                    cnt_title: 'Punya rencana membuat situs atau kendala IT?',
+                    cnt_desc: 'Jika Anda ingin membuat situs baru, memperbaiki situs yang bermasalah, atau membutuhkan solusi apa pun yang berhubungan dengan IT, silakan hubungi saya di <strong class="font-semibold text-stone-900 dark:text-stone-100">habibimron1508@gmail.com</strong>. Saya akan membantu memberikan solusi yang tepat dengan harga terjangkau.',
+                    cnt_btn_email: 'Hubungi via Email',
+                    cnt_btn_copy: 'Salin Alamat Email',
+                    footer_left: 'Habib Nugroho — Web Developer & Praktisi IT Indonesia',
+                    toast_copied: 'Alamat email berhasil disalin.',
+                    mail_subject: 'Konsultasi Website / IT'
+                },
+                en: {
+                    page_title: 'Habib Nugroho — Web Developer & IT Practitioner Indonesia',
+                    nav_services: 'Services',
+                    nav_stack: 'Tech Stack',
+                    nav_approach: 'Approach',
+                    nav_contact: 'Contact',
+                    hero_badge: 'IT Practitioner & Web Developer — Indonesia',
+                    hero_title: 'Building and fixing websites that are reliable, <span class="italic text-amber-700 dark:text-amber-400">efficient, and built to purpose.</span>',
+                    hero_p1: 'Hi, I am <strong class="font-semibold text-stone-900 dark:text-stone-100">Habib Nugroho</strong>, a programmer and IT practitioner based in Indonesia. My core expertise focuses on building and managing websites powered by <strong class="font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify, and Laravel</strong>.',
+                    hero_p2: 'By leveraging AI tools like <strong class="font-medium text-stone-900 dark:text-stone-100">Claude, ChatGPT, and Gemini</strong> purposefully, I can also build websites and web applications using any programming language or tech stack tailored to your exact preferences.',
+                    hero_cta_email: 'Discuss via Email',
+                    hero_cta_services: 'Explore Services',
+                    card_header: 'Expertise Overview',
+                    card_badge: 'Available',
+                    card_item1_title: 'WordPress, Shopify & Laravel',
+                    card_item1_desc: 'Business websites, online stores, and custom web applications.',
+                    card_item2_title: 'Multi-Stack Web & App + AI',
+                    card_item2_desc: 'Flexible workflow with Claude, ChatGPT & Gemini for any project.',
+                    card_item3_title: 'Site Fixes & IT Solutions',
+                    card_item3_desc: 'Error troubleshooting, speed optimization, and affordable pricing.',
+                    srv_eyebrow: 'Core Services',
+                    srv_heading: 'Website development and repair solutions for every need',
+                    srv_sub: 'Whether starting from scratch or fixing an existing system, every project focuses on stability, speed, and ease of use.',
+                    srv1_title: 'WordPress, Shopify & Laravel',
+                    srv1_desc: 'Building company profile websites, ready-to-sell online stores, and custom Laravel web applications with clean structure and an easy-to-manage admin panel.',
+                    srv2_title: 'Flexible Website & Web App',
+                    srv2_desc: 'Combining hands-on coding skills with Claude, ChatGPT, and Gemini, I can develop websites or web apps on virtually any tech stack you require.',
+                    srv3_title: 'Site Repairs & IT Support',
+                    srv3_desc: 'Fixing broken websites, layout bugs, slow load speeds, hosting/domain migrations, and day-to-day technical IT issues at an affordable rate.',
+                    tech_eyebrow: 'Platforms & AI Ecosystem',
+                    tech_heading: 'Tools I work with every day',
+                    tech_note: 'Pairing strong programming fundamentals with modern AI assistance.',
+                    tag_cms: 'CMS & Custom Themes',
+                    tag_ecom: 'E-Commerce & Liquid',
+                    tag_php: 'PHP Web Applications',
+                    tag_ai_arch: 'AI Code & Architecture',
+                    tag_ai_logic: 'AI Logic & Debugging',
+                    tag_ai_multi: 'AI Research & Multi-Stack',
+                    app_eyebrow: 'How I Work',
+                    app_heading: 'Why work together with me?',
+                    app1_title: 'Practical, right-fit solutions',
+                    app1_desc: 'I analyze your requirements first and recommend the most sensible technology—no over-engineering, strictly focused on what works.',
+                    app2_title: 'Flexible with AI assistance',
+                    app2_desc: 'Using Claude, ChatGPT, and Gemini accelerates development, and I can adapt to your preferred AI tools or tech stack.',
+                    app3_title: 'Affordable pricing',
+                    app3_desc: 'An efficient workflow keeps website creation and repair costs fair and budget-friendly for individuals and growing businesses.',
+                    app4_title: 'Clear, jargon-free communication',
+                    app4_desc: 'You get straightforward progress updates in plain language from initial discussion until your site goes live.',
+                    cnt_eyebrow: 'Start a Consultation',
+                    cnt_title: 'Planning a new website or need IT assistance?',
+                    cnt_desc: 'If you want to build a new website, fix an existing site, or need any IT-related solution, feel free to contact me at <strong class="font-semibold text-stone-900 dark:text-stone-100">habibimron1508@gmail.com</strong>. I will provide the right solution at an affordable price.',
+                    cnt_btn_email: 'Contact via Email',
+                    cnt_btn_copy: 'Copy Email Address',
+                    footer_left: 'Habib Nugroho — Web Developer & IT Practitioner Indonesia',
+                    toast_copied: 'Email address copied to clipboard.',
+                    mail_subject: 'Website / IT Consultation'
+                }
+            };
+
+            let currentLang = localStorage.getItem('lang') === 'en' ? 'en' : 'id';
+            const htmlEl = document.documentElement;
+            const themeToggle = document.getElementById('theme-toggle');
+            const langBtns = document.querySelectorAll('.lang-btn');
+            const heroEmailBtn = document.getElementById('hero-email-btn');
+            const directEmailBtn = document.getElementById('direct-email-btn');
+            const copyEmailBtn = document.getElementById('copy-email-btn');
+            const toast = document.getElementById('toast');
+            const scrollProgress = document.getElementById('scroll-progress');
+            const targetEmail = 'habibimron1508@gmail.com';
+
+            // Scroll progress indicator
+            window.addEventListener('scroll', () => {
+                const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+                scrollProgress.style.width = scrolled + '%';
+            }, { passive: true });
+
+            // Scroll Reveal Observer
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+            // Theme initialization & toggle
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlEl.classList.add('dark');
+            }
+
+            themeToggle.addEventListener('click', () => {
+                htmlEl.classList.toggle('dark');
+                localStorage.setItem('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+            });
+
+            // Accurate Bidirectional Language Switcher
+            function applyTranslations(lang) {
+                const dict = i18n[lang];
+                if (!dict) return;
+
+                currentLang = lang;
+                localStorage.setItem('lang', lang);
+                htmlEl.setAttribute('lang', lang);
+                document.title = dict.page_title;
+
+                langBtns.forEach(btn => {
+                    const isActive = btn.dataset.langBtn === lang;
+                    if (isActive) {
+                        btn.classList.add('bg-white', 'dark:bg-stone-800', 'text-stone-900', 'dark:text-stone-100', 'shadow-xs');
+                        btn.classList.remove('text-stone-500', 'dark:text-stone-400');
+                    } else {
+                        btn.classList.remove('bg-white', 'dark:bg-stone-800', 'text-stone-900', 'dark:text-stone-100', 'shadow-xs');
+                        btn.classList.add('text-stone-500', 'dark:text-stone-400');
+                    }
+                });
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (Object.prototype.hasOwnProperty.call(dict, key)) {
+                        el.textContent = dict[key];
+                    }
+                });
+
+                document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-html');
+                    if (Object.prototype.hasOwnProperty.call(dict, key)) {
+                        el.innerHTML = dict[key];
+                    }
+                });
+
+                const mailtoHref = `mailto:${targetEmail}?subject=${encodeURIComponent(dict.mail_subject)}`;
+                if (heroEmailBtn) heroEmailBtn.href = mailtoHref;
+                if (directEmailBtn) directEmailBtn.href = mailtoHref;
+            }
+
+            function switchLanguageWithFade(lang) {
+                if (lang === currentLang) return;
+                const fadeTargets = document.querySelectorAll('.lang-fade');
+                fadeTargets.forEach(el => el.classList.add('switching'));
+                setTimeout(() => {
+                    applyTranslations(lang);
+                    fadeTargets.forEach(el => el.classList.remove('switching'));
+                }, 140);
+            }
+
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', () => switchLanguageWithFade(btn.dataset.langBtn));
+            });
+
+            // Copy Email Handler
+            copyEmailBtn.addEventListener('click', () => {
+                const tempInput = document.createElement('input');
+                tempInput.value = targetEmail;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+
+                toast.classList.remove('hidden');
+                toast.classList.add('flex');
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('flex');
+                }, 2400);
+            });
+
+            // Initialize default language immediately
+            applyTranslations(currentLang);
+        });
+    </script>
+</body>
+</html>
