@@ -1,9 +1,0 @@
----
-layout: home
-title: "Hello. I'm Habib Nugroho."
-main_class: main_index
-pagination: 
-  enabled: true
----
-
-<!-- BLANK  From index.html -->
