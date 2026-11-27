@@ -17,9 +17,10 @@
     <meta property="og:description" content="Pembuatan & perbaikan website (WordPress, Shopify, Laravel) serta pengembangan web app lintas teknologi dengan bantuan AI. Solusi tepat dan harga terjangkau.">
     <meta property="og:locale" content="id_ID">
     <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:image" content="https://hndev.id/og-image.jpg">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Habib Nugroho — Web Developer & Praktisi IT">
     <meta name="twitter:description" content="Pembuatan & perbaikan website (WordPress, Shopify, Laravel) serta pengembangan web app lintas teknologi.">
 
@@ -37,15 +38,20 @@
         "addressRegion": "Jawa Timur",
         "addressCountry": "ID"
       },
-      "knowsAbout": ["WordPress", "Shopify", "Laravel", "Web Development", "Claude AI", "ChatGPT", "Google Gemini", "IT Troubleshooting"]
+      "knowsAbout": ["WordPress", "Shopify", "Laravel", "Web Development", "Claude AI", "ChatGPT", "Google Gemini", "IT Troubleshooting"],
+      "url": "https://hndev.id/",
+      "sameAs": [
+        "https://github.com/habibimroncn",
+        "https://www.linkedin.com/in/habib-nugroho/?locale=en"
+      ]
     }
     </script>
-    
+
     <!-- Google Fonts: Inter & Newsreader -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -57,20 +63,113 @@
                         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
                         serif: ['Newsreader', 'Georgia', 'serif'],
                     },
+                    colors: {
+                        brand: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                            800: '#854d0e',
+                            900: '#713f12',
+                            950: '#422006',
+                        },
+                        surface: {
+                            light: '#FAF9F6',
+                            dark: '#10100F',
+                        }
+                    },
                     animation: {
                         'float-slow': 'floatSlow 7s ease-in-out infinite',
+                        'float-medium': 'floatMedium 5s ease-in-out infinite',
                         'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'slide-down': 'slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in': 'fadeIn 0.6s ease-out forwards',
+                        'scale-in': 'scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'rotate-in': 'rotateIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'shimmer': 'shimmer 2s ease-in-out infinite',
+                        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+                        'blob': 'blob 8s ease-in-out infinite',
+                        'accordion-down': 'accordionDown 0.3s ease-out',
+                        'accordion-up': 'accordionUp 0.3s ease-in',
                     },
                     keyframes: {
                         floatSlow: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-8px)' },
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-12px) rotate(1deg)' },
+                        },
+                        floatMedium: {
+                            '0%, 100%': { transform: 'translate(0, 0)' },
+                            '25%': { transform: 'translate(8px, -8px)' },
+                            '50%': { transform: 'translate(0, -12px)' },
+                            '75%': { transform: 'translate(-8px, -4px)' },
                         },
                         pulseSubtle: {
                             '0%, 100%': { opacity: '1' },
                             '50%': { opacity: '0.5' },
-                        }
-                    }
+                        },
+                        slideUp: {
+                            'from': { opacity: '0', transform: 'translateY(40px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideDown: {
+                            'from': { opacity: '0', transform: 'translateY(-20px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            'from': { opacity: '0' },
+                            'to': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            'from': { opacity: '0', transform: 'scale(0.9)' },
+                            'to': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        rotateIn: {
+                            'from': { opacity: '0', transform: 'rotate(-6deg) scale(0.95)' },
+                            'to': { opacity: '1', transform: 'rotate(0) scale(1)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        glowPulse: {
+                            '0%, 100%': { opacity: '0.15', transform: 'scale(1)' },
+                            '50%': { opacity: '0.3', transform: 'scale(1.1)' },
+                        },
+                        blob: {
+                            '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%', transform: 'translate(0, 0) scale(1)' },
+                            '25%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%', transform: 'translate(20px, -20px) scale(1.05)' },
+                            '50%': { borderRadius: '50% 60% 30% 60% / 30% 50% 60% 40%', transform: 'translate(-10px, 10px) scale(0.95)' },
+                            '75%': { borderRadius: '60% 40% 60% 40% / 60% 40% 50% 50%', transform: 'translate(-10px, -10px) scale(1.02)' },
+                        },
+                        accordionDown: {
+                            from: { height: '0', opacity: '0' },
+                            to: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+                        },
+                        accordionUp: {
+                            from: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+                            to: { height: '0', opacity: '0' },
+                        },
+                    },
+                    transitionTimingFunction: {
+                        'spring': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                        'bounce-subtle': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        'ease-out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 40px -10px rgba(161, 98, 7, 0.3)',
+                        'glow-lg': '0 0 60px -15px rgba(161, 98, 7, 0.4)',
+                        'inner-glow': 'inset 0 0 40px -10px rgba(161, 98, 7, 0.1)',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+                        'mesh-gradient': 'linear-gradient(135deg, var(--tw-gradient-stops))',
+                    },
                 }
             }
         }
@@ -81,31 +180,83 @@
             overflow-x: hidden;
         }
         body {
-            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01", "ss02";
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #a16207, #854d0e); border-radius: 4px; border: 2px solid transparent; background-clip: content-box; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #ca8a04, #a16207); }
+        .dark ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #facc15, #eab308); }
+
         /* Subtle Architectural Grid Background */
         .bg-grid-pattern {
             background-size: 36px 36px;
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(120, 113, 108, 0.06) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(120, 113, 108, 0.06) 1px, transparent 1px);
         }
         .dark .bg-grid-pattern {
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
         }
+
+        /* Mesh Gradient Orbs */
+        .mesh-orb {
+            filter: blur(80px);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
         /* Scroll Reveal Animation */
         .reveal {
             opacity: 0;
-            transform: translateY(22px);
-            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
+        .reveal.stagger-1 { transition-delay: 60ms; }
+        .reveal.stagger-2 { transition-delay: 120ms; }
+        .reveal.stagger-3 { transition-delay: 180ms; }
+        .reveal.stagger-4 { transition-delay: 240ms; }
+        .reveal.stagger-5 { transition-delay: 300ms; }
+        .reveal.stagger-6 { transition-delay: 360ms; }
+
+        /* Hero sequential entrance — animates block-level children only,
+           so inline pieces (badge dot, highlighted words) stay in place. */
+        .hero-seq > * {
+            opacity: 0;
+            animation: slideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .hero-seq > *:nth-child(1) { animation-delay: 60ms; }
+        .hero-seq > *:nth-child(2) { animation-delay: 160ms; }
+        .hero-seq > *:nth-child(3) { animation-delay: 280ms; }
+        .hero-seq > *:nth-child(4) { animation-delay: 380ms; }
+        .hero-seq > *:nth-child(5) { animation-delay: 480ms; }
+
         /* Smooth language fade */
         .lang-fade {
             transition: opacity 0.18s ease;
@@ -113,44 +264,205 @@
         .lang-fade.switching {
             opacity: 0.35;
         }
+
+        /* Focus visible styles */
+        :focus-visible {
+            outline: 2px solid #ca8a04;
+            outline-offset: 3px;
+        }
+        .dark :focus-visible {
+            outline-color: #facc15;
+        }
+
+        /* Selection styles */
+        ::selection {
+            background: #a16207;
+            color: white;
+        }
+        .dark ::selection {
+            background: #facc15;
+            color: #10100F;
+        }
+
+        /* Text gradient utility */
+        .text-gradient {
+            background: linear-gradient(135deg, #a16207 0%, #eab308 50%, #facc15 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .text-gradient {
+            background: linear-gradient(135deg, #facc15 0%, #fde047 50%, #fef08a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Shimmer text */
+        .text-shimmer {
+            background: linear-gradient(90deg, #78716c 0%, #a16207 50%, #78716c 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        .dark .text-shimmer {
+            background: linear-gradient(90deg, #a8a29e 0%, #facc15 50%, #a8a29e 100%);
+            background-size: 200% auto;
+        }
+
+        /* Card hover lift */
+        .card-hover {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 40px -10px rgba(161, 98, 7, 0.15);
+        }
+        .dark .card-hover:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 40px -10px rgba(250, 204, 21, 0.2);
+        }
+
+        /* Magnetic button effect */
+        .magnetic {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Nav link underline animation */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #a16207, #eab308);
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Gradient border */
+        .gradient-border {
+            position: relative;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #a16207, #eab308, #facc15);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        .gradient-border:hover::before {
+            opacity: 1;
+        }
+
+        /* Hero floating elements */
+        .floating-shape {
+            animation: floatMedium 6s ease-in-out infinite;
+        }
+        .floating-shape:nth-child(2) { animation-delay: -2s; animation-duration: 7s; }
+        .floating-shape:nth-child(3) { animation-delay: -4s; animation-duration: 8s; }
+
+        /* Blob animation for hero */
+        .hero-blob {
+            animation: blob 12s ease-in-out infinite;
+        }
+
+        /* Stats counter animation */
+        .counter {
+            display: inline-block;
+        }
+
+        /* Loading skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #e7e5e4 25%, #f5f5f4 50%, #e7e5e4 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        .dark .skeleton {
+            background: linear-gradient(90deg, #292524 25%, #3f3f3f 50%, #292524 75%);
+            background-size: 200% 100%;
+        }
+
+        /* Parallax layers */
+        .parallax-layer {
+            will-change: transform;
+        }
+
+        /* Typewriter cursor */
+        .typewriter::after {
+            content: '|';
+            animation: blink 1s infinite;
+            margin-left: 2px;
+            color: #a16207;
+        }
+        .dark .typewriter::after {
+            color: #facc15;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Smooth theme transition */
+        * {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Disable transitions during theme switch to prevent flash */
+        .theme-switching * {
+            transition: none !important;
+        }
     </style>
 </head>
-<body class="bg-[#FAF9F6] text-stone-800 dark:bg-[#10100F] dark:text-stone-200 transition-colors duration-300 selection:bg-amber-700 selection:text-white dark:selection:bg-amber-400 dark:selection:text-stone-950">
+<body class="bg-surface-light text-stone-800 dark:bg-surface-dark dark:text-stone-200 transition-colors duration-300 selection:bg-brand-700 selection:text-white dark:selection:bg-brand-400 dark:selection:text-surface-dark">
 
     <!-- Top Progress Bar -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-amber-600 via-stone-800 to-amber-600 dark:from-amber-400 dark:via-stone-200 dark:to-amber-400 z-50 w-0 transition-all duration-100"></div>
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-brand-600 via-stone-800 to-brand-600 dark:from-brand-400 dark:via-stone-200 dark:to-brand-400 z-50 w-0 transition-all duration-100 origin-left-right scale-x-0"></div>
 
     <!-- Navigation Header (Fixed at Top) -->
-    <header class="fixed top-0 left-0 right-0 w-full z-40 bg-[#FAF9F6]/90 dark:bg-[#10100F]/90 backdrop-blur-md border-b border-stone-200/70 dark:border-stone-800/80 transition-colors shadow-2xs">
-        <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
-            <a href="#" class="group flex items-center gap-2.5 font-semibold text-sm sm:text-base tracking-tight text-stone-900 dark:text-stone-100">
-                <span class="w-7 h-7 rounded-lg bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-900 flex items-center justify-center text-xs font-bold transition-transform duration-300 group-hover:rotate-6">
+    <header class="fixed top-0 left-0 right-0 w-full z-40 bg-surface-light/85 dark:bg-surface-dark/85 backdrop-blur-xl border-b border-stone-200/70 dark:border-stone-800/80 transition-colors shadow-[0_1px_3px_rgba(0,0,0,0.02)] dark:shadow-[0_1px_3px_rgba(0,0,0,0.1)]">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 lg:h-18 flex items-center justify-between gap-4">
+            <a href="#" class="group flex items-center gap-2.5 font-semibold text-sm sm:text-base tracking-tight text-stone-900 dark:text-stone-100 magnetic">
+                <span class="w-8 h-8 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-900 flex items-center justify-center text-xs font-bold transition-all duration-300 group-hover:rotate-6 group-hover:bg-brand-700 group-hover:text-white dark:group-hover:bg-brand-500">
                     HN
                 </span>
-                <span>Habib Nugroho</span>
+                <span class="hidden sm:inline">Habib Nugroho</span>
             </a>
 
             <div class="flex items-center gap-4 sm:gap-7">
                 <nav class="hidden md:flex items-center gap-7 text-sm text-stone-600 dark:text-stone-400">
-                    <a href="#layanan" data-i18n="nav_services" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Layanan</a>
-                    <a href="#keahlian" data-i18n="nav_stack" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Teknologi</a>
-                    <a href="#pendekatan" data-i18n="nav_approach" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Cara Kerja</a>
-                    <a href="#kontak" data-i18n="nav_contact" class="hover:text-stone-900 dark:hover:text-stone-100 transition-colors">Kontak</a>
+                    <a href="#layanan" data-i18n="nav_services" class="nav-link hover:text-stone-900 dark:hover:text-stone-100 transition-colors relative">Layanan</a>
+                    <a href="#keahlian" data-i18n="nav_stack" class="nav-link hover:text-stone-900 dark:hover:text-stone-100 transition-colors relative">Teknologi</a>
+                    <a href="#pendekatan" data-i18n="nav_approach" class="nav-link hover:text-stone-900 dark:hover:text-stone-100 transition-colors relative">Cara Kerja</a>
+                    <a href="#kontak" data-i18n="nav_contact" class="nav-link hover:text-stone-900 dark:hover:text-stone-100 transition-colors relative">Kontak</a>
                 </nav>
 
                 <div class="flex items-center gap-2">
                     <!-- Language Toggle via Links (?lang=id / ?lang=en) -->
                     <div class="inline-flex items-center text-xs border border-stone-200 dark:border-stone-800 rounded-lg p-0.5 bg-stone-100/90 dark:bg-stone-900" role="group" aria-label="Language Switcher">
-                        <a href="?lang=id" data-lang-btn="id" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 shadow-xs">ID</a>
-                        <a href="?lang=en" data-lang-btn="en" class="lang-btn px-2.5 py-1 rounded-md font-medium transition-all duration-200 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">EN</a>
+                        <a href="?lang=id" data-lang-btn="id" class="lang-btn px-3 py-1.5 rounded-md font-medium transition-all duration-200 bg-white dark:bg-stone-800 text-stone-900 dark:text-stone-100 shadow-xs">ID</a>
+                        <a href="?lang=en" data-lang-btn="en" class="lang-btn px-3 py-1.5 rounded-md font-medium transition-all duration-200 text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">EN</a>
                     </div>
 
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" aria-label="Ganti Tema" class="p-2 rounded-lg border border-stone-200 dark:border-stone-800 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-all">
-                        <svg id="theme-icon-light" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button id="theme-toggle" aria-label="Ganti Tema" class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-800 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-900 transition-all duration-200 magnetic">
+                        <svg id="theme-icon-light" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
-                        <svg id="theme-icon-dark" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg id="theme-icon-dark" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
                         </svg>
                     </button>
@@ -159,26 +471,40 @@
         </div>
     </header>
 
-    <!-- Hero Section with Subtle Grid & Interactive Card -->
+    <!-- Hero Section with Advanced Animations -->
     <section class="relative bg-grid-pattern border-b border-stone-200/80 dark:border-stone-800/80 overflow-hidden pt-16">
-        <!-- Soft Ambient Glow -->
-        <div class="pointer-events-none absolute -top-24 right-1/4 w-96 h-96 bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl"></div>
+        <!-- Mesh Gradient Background Orbs -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden">
+            <div class="mesh-orb w-[500px] h-[500px] bg-brand-200/30 dark:bg-brand-900/20 top-1/4 left-1/4 animate-blob"></div>
+            <div class="mesh-orb w-[400px] h-[400px] bg-amber-200/20 dark:bg-amber-900/10 bottom-1/4 right-1/4 animate-blob" style="animation-delay: -4s;"></div>
+            <div class="mesh-orb w-[300px] h-[300px] bg-yellow-200/15 dark:bg-yellow-900/10 top-1/2 left-1/2 animate-blob" style="animation-delay: -8s;"></div>
+        </div>
 
-        <div class="max-w-5xl mx-auto px-5 sm:px-8 pt-14 pb-20 sm:pt-20 sm:pb-24">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-                
+        <!-- Floating geometric shapes -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden">
+            <div class="floating-shape absolute top-20 left-10 w-4 h-4 rounded bg-brand-400/30 dark:bg-brand-500/20"></div>
+            <div class="floating-shape absolute top-40 right-20 w-3 h-3 rounded-full bg-amber-400/30 dark:bg-amber-500/20"></div>
+            <div class="floating-shape absolute bottom-40 left-20 w-2 h-2 rounded bg-yellow-400/30 dark:bg-yellow-500/20"></div>
+            <div class="floating-shape absolute bottom-20 right-10 w-5 h-5 border border-brand-400/30 dark:border-brand-500/20 rounded-lg"></div>
+            <div class="floating-shape absolute top-1/2 left-5 w-1 h-1 rounded-full bg-brand-500/40 dark:bg-brand-400/30"></div>
+            <div class="floating-shape absolute top-1/3 right-5 w-1.5 h-1.5 rounded-full bg-amber-500/40 dark:bg-amber-400/30"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 pt-14 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
                 <!-- Left Column: Intro & Copy -->
-                <div class="lg:col-span-7 lang-fade">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-stone-900 border border-stone-200/90 dark:border-stone-800 text-xs font-medium text-stone-600 dark:text-stone-300 mb-6 shadow-2xs">
+                <div class="lg:col-span-7 lang-fade reveal hero-seq">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 text-xs font-medium text-stone-600 dark:text-stone-300 mb-8 shadow-sm backdrop-blur-sm">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-subtle"></span>
                         <span data-i18n="hero_badge">Praktisi IT & Web Developer — Indonesia</span>
                     </div>
 
-                    <h1 data-i18n-html="hero_title" class="font-serif text-3xl sm:text-5xl font-medium tracking-tight text-stone-900 dark:text-stone-100 leading-[1.15] mb-6">
-                        Membangun dan memperbaiki situs web yang andal, <span class="italic text-amber-700 dark:text-amber-400">efisien, dan tepat sasaran.</span>
+                    <h1 data-i18n-html="hero_title" class="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-stone-900 dark:text-stone-100 leading-[1.1] mb-7">
+                        Membangun dan memperbaiki situs web yang andal, <span class="italic text-gradient">efisien, dan tepat sasaran.</span>
                     </h1>
 
-                    <div class="space-y-4 text-base text-stone-600 dark:text-stone-300 leading-relaxed mb-8">
+                    <div class="space-y-5 text-base sm:text-lg text-stone-600 dark:text-stone-300 leading-relaxed mb-10">
                         <p data-i18n-html="hero_p1">
                             Halo, saya <strong class="font-semibold text-stone-900 dark:text-stone-100">Habib Nugroho</strong>, seorang programmer dan praktisi IT dari Indonesia. Keahlian utama saya berfokus pada pembuatan dan pengelolaan situs berbasis <strong class="font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify, dan Laravel</strong>.
                         </p>
@@ -187,259 +513,411 @@
                         </p>
                     </div>
 
+                    <!-- Trust indicators -->
+                    <div class="flex flex-wrap items-center gap-6 mb-10">
+                        <div class="flex items-center gap-2 text-sm text-stone-500 dark:text-stone-400">
+                            <svg class="w-5 h-5 text-brand-600 dark:text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span data-i18n="trust_projects">50+ Proyek Selesai</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-stone-500 dark:text-stone-400">
+                            <svg class="w-5 h-5 text-brand-600 dark:text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span data-i18n="trust_clients">Klien Puas</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-stone-500 dark:text-stone-400">
+                            <svg class="w-5 h-5 text-brand-600 dark:text-brand-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span data-i18n="trust_response">Respons < 24 Jam</span>
+                        </div>
+                    </div>
+
                     <div class="flex flex-wrap items-center gap-3.5">
-                        <a id="hero-email-btn" href="mailto:habibimron1508@gmail.com?subject=Konsultasi%20Website%20%2F%20IT" class="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-900 text-sm font-medium shadow-sm hover:shadow transition-all duration-200 hover:-translate-y-0.5">
+                        <a id="hero-email-btn" href="mailto:habibimron1508@gmail.com?subject=Konsultasi%20Website%20%2F%20IT" class="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-900 text-sm font-medium shadow-sm hover:shadow-lg hover:shadow-brand-600/20 dark:hover:shadow-brand-400/20 transition-all duration-300 hover:-translate-y-1 magnetic gradient-border">
                             <span data-i18n="hero_cta_email">Diskusi via Email</span>
-                            <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
                         </a>
-                        <a href="#layanan" data-i18n="hero_cta_services" class="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white/80 dark:bg-stone-900/80 border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 text-stone-700 dark:text-stone-300 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5">
+                        <a href="#layanan" data-i18n="hero_cta_services" class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/80 dark:bg-stone-900/80 border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 text-stone-700 dark:text-stone-300 text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:hover:bg-stone-900 magnetic">
                             Lihat Layanan
+                            <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
                         </a>
                     </div>
                 </div>
 
                 <!-- Right Column: Interactive Capability Overview Card -->
                 <div class="lg:col-span-5">
-                    <div class="animate-float-slow rounded-2xl bg-white/95 dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-800 p-6 shadow-lg shadow-stone-900/5 dark:shadow-black/30 backdrop-blur-sm lang-fade">
-                        <div class="flex items-center justify-between pb-4 mb-4 border-b border-stone-100 dark:border-stone-800">
+                    <div class="relative animate-float-slow rounded-3xl bg-white/95 dark:bg-stone-900/95 border border-stone-200/90 dark:border-stone-800 p-6 sm:p-8 shadow-xl shadow-stone-900/5 dark:shadow-black/30 backdrop-blur-xl lang-fade reveal" style="transition-delay: 200ms;">
+                        <!-- Glow accent -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-brand-500/20 dark:bg-brand-500/10 rounded-full blur-2xl animate-glow-pulse"></div>
+
+                        <div class="flex items-center justify-between pb-5 mb-5 border-b border-stone-100 dark:border-stone-800">
                             <span data-i18n="card_header" class="text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500">Ringkasan Keahlian</span>
-                            <span class="text-xs font-medium text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 px-2.5 py-0.5 rounded-md border border-amber-200/60 dark:border-amber-800/50" data-i18n="card_badge">Siap Membantu</span>
+                            <span class="text-xs font-medium text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50 px-3 py-1 rounded-full border border-brand-200/60 dark:border-brand-800/50 animate-pulse-subtle" data-i18n="card_badge">Siap Membantu</span>
                         </div>
 
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3.5 group">
-                                <div class="w-9 h-9 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/40 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4 group card-hover rounded-xl p-3 transition-all duration-300">
+                                <div class="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-brand-100 dark:group-hover:bg-brand-900/40 group-hover:text-brand-800 dark:group-hover:text-brand-300 transition-all duration-300 magnetic">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
                                 </div>
-                                <div>
-                                    <h2 data-i18n="card_item1_title" class="text-sm font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify & Laravel</h2>
-                                    <p data-i18n="card_item1_desc" class="text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-relaxed">Pembuatan website bisnis, toko online, hingga sistem web kustom.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-3.5 group">
-                                <div class="w-9 h-9 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/40 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                                </div>
-                                <div>
-                                    <h2 data-i18n="card_item2_title" class="text-sm font-semibold text-stone-900 dark:text-stone-100">Web & App Lintas Stack + AI</h2>
-                                    <p data-i18n="card_item2_desc" class="text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-relaxed">Fleksibel memakai Claude, ChatGPT & Gemini sesuai kebutuhan proyek.</p>
+                                <div class="pt-1">
+                                    <h2 data-i18n="card_item1_title" class="text-base font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify & Laravel</h2>
+                                    <p data-i18n="card_item1_desc" class="text-sm text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">Pembuatan website bisnis, toko online, hingga sistem web kustom.</p>
                                 </div>
                             </div>
 
-                            <div class="flex items-start gap-3.5 group">
-                                <div class="w-9 h-9 rounded-lg bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-amber-100 dark:group-hover:bg-amber-900/40 group-hover:text-amber-800 dark:group-hover:text-amber-300 transition-colors">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                            <div class="flex items-start gap-4 group card-hover rounded-xl p-3 transition-all duration-300">
+                                <div class="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-brand-100 dark:group-hover:bg-brand-900/40 group-hover:text-brand-800 dark:group-hover:text-brand-300 transition-all duration-300 magnetic">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                                 </div>
-                                <div>
-                                    <h2 data-i18n="card_item3_title" class="text-sm font-semibold text-stone-900 dark:text-stone-100">Perbaikan & Solusi IT</h2>
-                                    <p data-i18n="card_item3_desc" class="text-xs text-stone-500 dark:text-stone-400 mt-0.5 leading-relaxed">Troubleshooting error, optimasi kecepatan, dan harga bersahabat.</p>
+                                <div class="pt-1">
+                                    <h2 data-i18n="card_item2_title" class="text-base font-semibold text-stone-900 dark:text-stone-100">Web & App Lintas Stack + AI</h2>
+                                    <p data-i18n="card_item2_desc" class="text-sm text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">Fleksibel memakai Claude, ChatGPT & Gemini sesuai kebutuhan proyek.</p>
                                 </div>
                             </div>
+
+                            <div class="flex items-start gap-4 group card-hover rounded-xl p-3 transition-all duration-300">
+                                <div class="w-10 h-10 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 shrink-0 group-hover:bg-brand-100 dark:group-hover:bg-brand-900/40 group-hover:text-brand-800 dark:group-hover:text-brand-300 transition-all duration-300 magnetic">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                                </div>
+                                <div class="pt-1">
+                                    <h2 data-i18n="card_item3_title" class="text-base font-semibold text-stone-900 dark:text-stone-100">Perbaikan & Solusi IT</h2>
+                                    <p data-i18n="card_item3_desc" class="text-sm text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">Troubleshooting error, optimasi kecepatan, dan harga bersahabat.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom accent line -->
+                        <div class="mt-6 h-px bg-gradient-to-r from-transparent via-stone-200 dark:via-stone-800 to-transparent"></div>
+                        <div class="mt-4 flex items-center gap-3 text-xs text-stone-400 dark:text-stone-500">
+                            <svg class="w-4 h-4 text-brand-500 dark:text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <span data-i18n="card_footer">Dibangun dengan ketelitian & AI modern</span>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce lang-fade reveal" style="transition-delay: 600ms;">
+            <a href="#layanan" class="flex flex-col items-center gap-2 text-stone-400 dark:text-stone-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                <span class="text-xs uppercase tracking-widest font-medium" data-i18n="scroll_down">Scroll</span>
+            </a>
+        </div>
     </section>
 
-    <main class="max-w-5xl mx-auto px-5 sm:px-8">
-        
+    <main class="max-w-6xl mx-auto px-5 sm:px-8">
+
         <!-- Layanan Section (Interactive Cards with Hover Lift) -->
-        <section id="layanan" class="py-16 sm:py-24 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
-            <div class="reveal max-w-2xl mb-12">
-                <p data-i18n="srv_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2">
+        <section id="layanan" class="py-20 sm:py-28 lg:py-32 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
+            <div class="reveal max-w-2xl mb-14 lg:mb-16">
+                <p data-i18n="srv_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-3">
                     Layanan Utama
                 </p>
-                <h2 data-i18n="srv_heading" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100 mb-3">
+                <h2 data-i18n="srv_heading" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-stone-900 dark:text-stone-100 mb-4 leading-tight">
                     Solusi pembuatan dan perbaikan situs untuk berbagai kebutuhan
                 </h2>
-                <p data-i18n="srv_sub" class="text-sm sm:text-base text-stone-600 dark:text-stone-400">
+                <p data-i18n="srv_sub" class="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed">
                     Baik memulai dari nol maupun merapikan sistem yang sudah berjalan, setiap pekerjaan difokuskan pada hasil yang stabil dan mudah digunakan.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Card 1 -->
-                <div class="reveal group rounded-2xl p-6 sm:p-7 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-600/50 dark:hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-900/5 dark:hover:shadow-black/40">
-                    <div class="w-11 h-11 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                <article class="reveal stagger-1 group card-hover rounded-3xl p-7 sm:p-8 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-brand-600/50 dark:hover:border-brand-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-600/10 dark:hover:shadow-brand-400/10">
+                    <div class="w-12 h-12 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-500 magnetic">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                     </div>
-                    <h3 data-i18n="srv1_title" class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2.5">
+                    <h3 data-i18n="srv1_title" class="text-xl font-semibold text-stone-900 dark:text-stone-100 mb-3">
                         WordPress, Shopify & Laravel
                     </h3>
-                    <p data-i18n="srv1_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                    <p data-i18n="srv1_desc" class="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
                         Pembuatan website profil usaha, toko online siap jualan, hingga aplikasi web kustom berbasis Laravel dengan struktur rapi dan panel admin yang mudah Anda kelola.
                     </p>
-                </div>
+                    <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 border-t border-stone-100 dark:border-stone-800 pt-4">
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">WP</span>
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">Shopify</span>
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">Laravel</span>
+                    </div>
+                </article>
 
                 <!-- Card 2 -->
-                <div class="reveal group rounded-2xl p-6 sm:p-7 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-600/50 dark:hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-900/5 dark:hover:shadow-black/40" style="transition-delay: 80ms;">
-                    <div class="w-11 h-11 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <article class="reveal stagger-2 group card-hover rounded-3xl p-7 sm:p-8 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-brand-600/50 dark:hover:border-brand-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-600/10 dark:hover:shadow-brand-400/10">
+                    <div class="w-12 h-12 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-500 magnetic">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 data-i18n="srv2_title" class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2.5">
+                    <h3 data-i18n="srv2_title" class="text-xl font-semibold text-stone-900 dark:text-stone-100 mb-3">
                         Website & Web App Fleksibel
                     </h3>
-                    <p data-i18n="srv2_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                    <p data-i18n="srv2_desc" class="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
                         Mengombinasikan keahlian coding dengan Claude, ChatGPT, dan Gemini, saya dapat mengembangkan situs atau web app menggunakan stack apa pun sesuai spesifikasi yang Anda minta.
                     </p>
-                </div>
+                    <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 border-t border-stone-100 dark:border-stone-800 pt-4">
+                        <span class="px-2 py-0.5 rounded bg-brand-50 dark:bg-brand-900/50 text-brand-700 dark:text-brand-400 border border-brand-200 dark:border-brand-800">AI</span>
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">Multi-Stack</span>
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">Custom</span>
+                    </div>
+                </article>
 
                 <!-- Card 3 -->
-                <div class="reveal group rounded-2xl p-6 sm:p-7 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-600/50 dark:hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-stone-900/5 dark:hover:shadow-black/40" style="transition-delay: 160ms;">
-                    <div class="w-11 h-11 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-5 group-hover:scale-105 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-300">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
+                <article class="reveal stagger-3 group card-hover rounded-3xl p-7 sm:p-8 bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-brand-600/50 dark:hover:border-brand-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-600/10 dark:hover:shadow-brand-400/10">
+                    <div class="w-12 h-12 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-stone-900 group-hover:text-white dark:group-hover:bg-stone-100 dark:group-hover:text-stone-900 transition-all duration-500 magnetic">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg>
                     </div>
-                    <h3 data-i18n="srv3_title" class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-2.5">
+                    <h3 data-i18n="srv3_title" class="text-xl font-semibold text-stone-900 dark:text-stone-100 mb-3">
                         Perbaikan Situs & Bantuan IT
                     </h3>
-                    <p data-i18n="srv3_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                    <p data-i18n="srv3_desc" class="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-6">
                         Mengatasi website error, bug tampilan, loading lambat, pemindahan hosting/domain, serta berbagai kendala teknis IT harian dengan solusi cepat dan biaya terjangkau.
                     </p>
-                </div>
+                    <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 border-t border-stone-100 dark:border-stone-800 pt-4">
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">Fix Bug</span>
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">Optimasi</span>
+                        <span class="px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800">Migrasi</span>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CTA Strip -->
+            <div class="reveal stagger-4 mt-14 text-center" style="opacity: 0; animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;">
+                <p class="text-stone-500 dark:text-stone-400 mb-4" data-i18n="srv_cta_text">Butuh solusi yang tidak tercantum di atas?</p>
+                <a href="#kontak" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 dark:bg-brand-500 dark:hover:bg-brand-400 text-white font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-brand-600/30 magnetic">
+                    <span data-i18n="srv_cta_btn">Diskusikan Kebutuhan Anda</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
             </div>
         </section>
 
         <!-- Teknologi & AI Ecosystem (Interactive Filter / Showcase) -->
-        <section id="keahlian" class="py-16 sm:py-24 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
-            <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <section id="keahlian" class="py-20 sm:py-28 lg:py-32 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
+            <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 lg:mb-16">
                 <div>
-                    <p data-i18n="tech_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2">
+                    <p data-i18n="tech_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-3">
                         Platform & Ekosistem AI
                     </p>
-                    <h2 data-i18n="tech_heading" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100">
+                    <h2 data-i18n="tech_heading" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-stone-900 dark:text-stone-100 leading-tight">
                         Perangkat yang saya gunakan setiap hari
                     </h2>
                 </div>
-                <p data-i18n="tech_note" class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 max-w-xs">
+                <p data-i18n="tech_note" class="text-sm sm:text-base text-stone-500 dark:text-stone-400 max-w-xs leading-relaxed">
                     Memadukan fondasi pemrograman yang kuat dengan asistensi AI modern.
                 </p>
             </div>
 
-            <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5">
-                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all hover:-translate-y-1 text-center">
+            <div class="reveal grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-5">
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-brand-600/10 dark:hover:shadow-brand-400/10 text-center group card-hover">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 group-hover:bg-brand-100 dark:group-hover:bg-brand-900/40 group-hover:text-brand-800 dark:group-hover:text-brand-300 transition-all duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
                     <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">WordPress</div>
-                    <div data-i18n="tag_cms" class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">CMS & Custom Theme</div>
+                    <div data-i18n="tag_cms" class="text-xs text-stone-500 dark:text-stone-400 mt-1">CMS & Tema Kustom</div>
                 </div>
-                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all hover:-translate-y-1 text-center">
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-brand-600/10 dark:hover:shadow-brand-400/10 text-center group card-hover">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 group-hover:bg-brand-100 dark:group-hover:bg-brand-900/40 group-hover:text-brand-800 dark:group-hover:text-brand-300 transition-all duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M16 11V7a2 2 0 00-2-2H6a2 2 0 00-2 2v18a2 2 0 002 2h12a2 2 0 002-2v-4"></path></svg>
+                    </div>
                     <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Shopify</div>
-                    <div data-i18n="tag_ecom" class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">E-Commerce & Liquid</div>
+                    <div data-i18n="tag_ecom" class="text-xs text-stone-500 dark:text-stone-400 mt-1">E-Commerce & Liquid</div>
                 </div>
-                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all hover:-translate-y-1 text-center">
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-stone-400 dark:hover:border-stone-600 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-brand-600/10 dark:hover:shadow-brand-400/10 text-center group card-hover">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center text-stone-700 dark:text-stone-300 group-hover:bg-brand-100 dark:group-hover:bg-brand-900/40 group-hover:text-brand-800 dark:group-hover:text-brand-300 transition-all duration-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
                     <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Laravel</div>
-                    <div data-i18n="tag_php" class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">PHP Web Application</div>
+                    <div data-i18n="tag_php" class="text-xs text-stone-500 dark:text-stone-400 mt-1">Aplikasi Web PHP</div>
                 </div>
-                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all hover:-translate-y-1 text-center">
-                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Claude</div>
-                    <div data-i18n="tag_ai_arch" class="text-[11px] text-amber-700 dark:text-amber-400 mt-1">AI Code & Architecture</div>
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-brand-500/60 dark:hover:border-brand-400/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-brand-600/20 dark:hover:shadow-brand-400/20 text-center group card-hover relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-50 dark:bg-brand-900/50 flex items-center justify-center text-brand-700 dark:text-brand-400 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0114 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100 relative z-10">Claude</div>
+                    <div data-i18n="tag_ai_arch" class="text-xs text-brand-700 dark:text-brand-400 mt-1 font-medium relative z-10">AI Kode & Arsitektur</div>
                 </div>
-                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all hover:-translate-y-1 text-center">
-                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">ChatGPT</div>
-                    <div data-i18n="tag_ai_logic" class="text-[11px] text-amber-700 dark:text-amber-400 mt-1">AI Logic & Debugging</div>
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-brand-500/60 dark:hover:border-brand-400/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-brand-600/20 dark:hover:shadow-brand-400/20 text-center group card-hover relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-50 dark:bg-brand-900/50 flex items-center justify-center text-brand-700 dark:text-brand-400 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100 relative z-10">ChatGPT</div>
+                    <div data-i18n="tag_ai_logic" class="text-xs text-brand-700 dark:text-brand-400 mt-1 font-medium relative z-10">AI Logika & Debugging</div>
                 </div>
-                <div class="p-4 rounded-xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-amber-500/60 dark:hover:border-amber-400/50 transition-all hover:-translate-y-1 text-center">
-                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">Gemini</div>
-                    <div data-i18n="tag_ai_multi" class="text-[11px] text-amber-700 dark:text-amber-400 mt-1">AI Research & Multi-Stack</div>
+                <div class="p-5 rounded-2xl bg-white dark:bg-stone-900/60 border border-stone-200/90 dark:border-stone-800 hover:border-brand-500/60 dark:hover:border-brand-400/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-brand-600/20 dark:hover:shadow-brand-400/20 text-center group card-hover relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-brand-50 dark:bg-brand-900/50 flex items-center justify-center text-brand-700 dark:text-brand-400 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div class="text-sm font-semibold text-stone-900 dark:text-stone-100 relative z-10">Gemini</div>
+                    <div data-i18n="tag_ai_multi" class="text-xs text-brand-700 dark:text-brand-400 mt-1 font-medium relative z-10">AI Riset & Lintas Stack</div>
+                </div>
+            </div>
+
+            <!-- Tech stack cloud -->
+            <div class="reveal stagger-5 mt-14" style="opacity: 0; animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;">
+                <div class="flex flex-wrap items-center justify-center gap-2.5 text-xs sm:text-sm">
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra1">HTML/CSS</span>
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra2">JavaScript</span>
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra3">TypeScript</span>
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra4">Tailwind</span>
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra5">Git</span>
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra6">Docker</span>
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra7">REST API</span>
+                    <span class="px-3 py-1.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700" data-i18n="tag_extra8">MySQL</span>
                 </div>
             </div>
         </section>
 
         <!-- Cara Kerja / Keunggulan -->
-        <section id="pendekatan" class="py-16 sm:py-24 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
-            <div class="reveal max-w-2xl mb-12">
-                <p data-i18n="app_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-2">
+        <section id="pendekatan" class="py-20 sm:py-28 lg:py-32 border-b border-stone-200/80 dark:border-stone-800/80 lang-fade">
+            <div class="reveal max-w-2xl mb-12 lg:mb-16">
+                <p data-i18n="app_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-3">
                     Cara Kerja
                 </p>
-                <h2 data-i18n="app_heading" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100">
+                <h2 data-i18n="app_heading" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-stone-900 dark:text-stone-100 leading-tight">
                     Mengapa bekerja sama dengan saya?
                 </h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70">
-                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">01</span>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+                <article class="reveal stagger-1 flex gap-5 p-6 rounded-3xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70 hover:border-brand-300/50 dark:hover:border-brand-700/50 transition-all duration-500 card-hover group">
+                    <span class="font-serif italic text-3xl text-brand-700 dark:text-brand-400 shrink-0 group-hover:scale-110 transition-transform duration-300">01</span>
                     <div>
-                        <h3 data-i18n="app1_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                        <h3 data-i18n="app1_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-2">
                             Solusi yang tepat guna
                         </h3>
                         <p data-i18n="app1_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                             Saya menganalisis kebutuhan Anda terlebih dahulu dan merekomendasikan teknologi yang paling sesuai—tidak berlebihan dan tepat sasaran.
                         </p>
                     </div>
-                </div>
+                </article>
 
-                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70" style="transition-delay: 80ms;">
-                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">02</span>
+                <article class="reveal stagger-2 flex gap-5 p-6 rounded-3xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70 hover:border-brand-300/50 dark:hover:border-brand-700/50 transition-all duration-500 card-hover group">
+                    <span class="font-serif italic text-3xl text-brand-700 dark:text-brand-400 shrink-0 group-hover:scale-110 transition-transform duration-300">02</span>
                     <div>
-                        <h3 data-i18n="app2_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                        <h3 data-i18n="app2_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-2">
                             Fleksibel dengan bantuan AI
                         </h3>
                         <p data-i18n="app2_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                             Dengan Claude, ChatGPT, dan Gemini, pengerjaan kode menjadi lebih cepat dan saya siap menyesuaikan AI maupun stack sesuai preferensi Anda.
                         </p>
                     </div>
-                </div>
+                </article>
 
-                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70" style="transition-delay: 140ms;">
-                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">03</span>
+                <article class="reveal stagger-3 flex gap-5 p-6 rounded-3xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70 hover:border-brand-300/50 dark:hover:border-brand-700/50 transition-all duration-500 card-hover group">
+                    <span class="font-serif italic text-3xl text-brand-700 dark:text-brand-400 shrink-0 group-hover:scale-110 transition-transform duration-300">03</span>
                     <div>
-                        <h3 data-i18n="app3_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                        <h3 data-i18n="app3_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-2">
                             Harga yang terjangkau
                         </h3>
                         <p data-i18n="app3_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                             Alur kerja yang efisien memungkinkan biaya pembuatan maupun perbaikan situs tetap ramah di kantong bagi personal maupun UMKM.
                         </p>
                     </div>
-                </div>
+                </article>
 
-                <div class="reveal flex gap-4 p-5 rounded-2xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70" style="transition-delay: 200ms;">
-                    <span class="font-serif italic text-2xl text-amber-700 dark:text-amber-400 shrink-0">04</span>
+                <article class="reveal stagger-4 flex gap-5 p-6 rounded-3xl bg-stone-100/70 dark:bg-stone-900/40 border border-stone-200/60 dark:border-stone-800/70 hover:border-brand-300/50 dark:hover:border-brand-700/50 transition-all duration-500 card-hover group">
+                    <span class="font-serif italic text-3xl text-brand-700 dark:text-brand-400 shrink-0 group-hover:scale-110 transition-transform duration-300">04</span>
                     <div>
-                        <h3 data-i18n="app4_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-1.5">
+                        <h3 data-i18n="app4_title" class="font-semibold text-stone-900 dark:text-stone-100 text-base mb-2">
                             Komunikasi mudah dipahami
                         </h3>
                         <p data-i18n="app4_desc" class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                             Penjelasan progres disampaikan secara jelas tanpa istilah teknis yang membingungkan, dari tahap awal hingga website siap online.
                         </p>
                     </div>
+                </article>
+            </div>
+
+            <!-- Process timeline -->
+            <div class="reveal stagger-5 mt-14 relative" style="opacity: 0; animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;">
+                <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-300 via-brand-500 to-brand-300 dark:from-brand-600 dark:via-brand-500 dark:to-brand-600"></div>
+                <div class="pl-16 space-y-10">
+                    <div class="relative flex items-start gap-4 group">
+                        <div class="absolute left-6 top-1 w-3 h-3 rounded-full bg-brand-500 border-4 border-surface-light dark:border-surface-dark z-10 group-hover:scale-150 transition-transform duration-300"></div>
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-900/50 flex items-center justify-center text-brand-700 dark:text-brand-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-stone-900 dark:text-stone-100 mb-1" data-i18n="process1_title">Konsultasi & Analisis</h4>
+                            <p class="text-sm text-stone-600 dark:text-stone-400" data-i18n="process1_desc">Memahami kebutuhan, mengevaluasi situs existing, dan merencanakan arsitektur solusi.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start gap-4 group">
+                        <div class="absolute left-6 top-1 w-3 h-3 rounded-full bg-brand-500 border-4 border-surface-light dark:border-surface-dark z-10 group-hover:scale-150 transition-transform duration-300"></div>
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-900/50 flex items-center justify-center text-brand-700 dark:text-brand-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-stone-900 dark:text-stone-100 mb-1" data-i18n="process2_title">Pengembangan Cepat</h4>
+                            <p class="text-sm text-stone-600 dark:text-stone-400" data-i18n="process2_desc">Membangun dengan AI-assisted coding, code review otomatis, dan best practices modern.</p>
+                        </div>
+                    </div>
+                    <div class="relative flex items-start gap-4 group">
+                        <div class="absolute left-6 top-1 w-3 h-3 rounded-full bg-brand-500 border-4 border-surface-light dark:border-surface-dark z-10 group-hover:scale-150 transition-transform duration-300"></div>
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-brand-50 dark:bg-brand-900/50 flex items-center justify-center text-brand-700 dark:text-brand-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-stone-900 dark:text-stone-100 mb-1" data-i18n="process3_title">Testing & Launch</h4>
+                            <p class="text-sm text-stone-600 dark:text-stone-400" data-i18n="process3_desc">QA menyeluruh, optimasi performa, dan deploy dengan dukungan pasca-launch.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Kontak Section -->
-        <section id="kontak" class="py-16 sm:py-24 lang-fade">
-            <div class="reveal relative overflow-hidden p-7 sm:p-12 rounded-3xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/70 shadow-sm">
-                <div class="pointer-events-none absolute -bottom-20 -right-20 w-72 h-72 bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl"></div>
+        <section id="kontak" class="py-20 sm:py-28 lg:py-32 lang-fade">
+            <div class="reveal relative overflow-hidden p-8 sm:p-14 lg:p-16 rounded-4xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/70 shadow-sm">
+                <!-- Background mesh -->
+                <div class="pointer-events-none absolute inset-0">
+                    <div class="mesh-orb w-[400px] h-[400px] bg-brand-200/30 dark:bg-brand-900/20 -bottom-40 -right-40 animate-blob"></div>
+                    <div class="mesh-orb w-[300px] h-[300px] bg-amber-200/20 dark:bg-amber-900/10 -top-20 -left-20 animate-blob" style="animation-delay: -6s;"></div>
+                </div>
 
                 <div class="relative z-10 max-w-2xl">
-                    <p data-i18n="cnt_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-amber-700 dark:text-amber-400 mb-3">
+                    <p data-i18n="cnt_eyebrow" class="text-xs font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400 mb-4">
                         Mulai Konsultasi
                     </p>
-                    <h2 data-i18n="cnt_title" class="font-serif text-2xl sm:text-4xl font-medium text-stone-900 dark:text-stone-100 mb-4">
+                    <h2 data-i18n="cnt_title" class="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-stone-900 dark:text-stone-100 mb-5 leading-tight">
                         Punya rencana membuat situs atau kendala IT?
                     </h2>
-                    <p data-i18n-html="cnt_desc" class="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed mb-8">
+                    <p data-i18n-html="cnt_desc" class="text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed mb-10">
                         Jika Anda ingin membuat situs baru, memperbaiki situs yang bermasalah, atau membutuhkan solusi apa pun yang berhubungan dengan IT, silakan hubungi saya di <strong class="font-semibold text-stone-900 dark:text-stone-100">habibimron1508@gmail.com</strong>. Saya akan membantu memberikan solusi yang tepat dengan harga terjangkau.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-                        <a id="direct-email-btn" href="mailto:habibimron1508@gmail.com?subject=Konsultasi%20Website%20%2F%20IT" class="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-900 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5 shadow-sm">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <a id="direct-email-btn" href="mailto:habibimron1508@gmail.com?subject=Konsultasi%20Website%20%2F%20IT" class="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-stone-900 hover:bg-stone-800 dark:bg-stone-100 dark:hover:bg-white text-stone-50 dark:text-stone-900 text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-600/20 dark:hover:shadow-brand-400/20 magnetic gradient-border">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                             </svg>
                             <span data-i18n="cnt_btn_email">Hubungi via Email</span>
                         </a>
 
-                        <button type="button" id="copy-email-btn" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 text-sm font-medium transition-all duration-200">
-                            <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <button type="button" id="copy-email-btn" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-800 text-stone-700 dark:text-stone-300 text-sm font-medium transition-all duration-300 hover:-translate-y-1 hover:shadow-lg magnetic">
+                            <svg class="w-5 h-5 text-stone-400 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                             </svg>
                             <span data-i18n="cnt_btn_copy">Salin Alamat Email</span>
                         </button>
+                    </div>
+
+                    <!-- Alternative contact methods -->
+                    <div class="mt-10 pt-8 border-t border-stone-200/60 dark:border-stone-800/60">
+                        <p class="text-xs text-stone-500 dark:text-stone-400 mb-4" data-i18n="cnt_alt">Atau hubungi melalui:</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://github.com/habibimroncn" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-sm hover:bg-stone-200 dark:hover:bg-stone-700 transition-all hover:-translate-y-0.5 magnetic">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/habib-nugroho/?locale=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-sm hover:bg-stone-200 dark:hover:bg-stone-700 transition-all hover:-translate-y-0.5 magnetic">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -448,16 +926,21 @@
     </main>
 
     <!-- Footer -->
-    <footer class="max-w-5xl mx-auto px-5 sm:px-8 pb-12 pt-6 border-t border-stone-200/70 dark:border-stone-800/70 lang-fade">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-stone-500 dark:text-stone-400">
+    <footer class="max-w-6xl mx-auto px-5 sm:px-8 pb-10 pt-8 border-t border-stone-200/70 dark:border-stone-800/70 lang-fade">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500 dark:text-stone-400">
             <span data-i18n="footer_left">Habib Nugroho — Web Developer & Praktisi IT Indonesia</span>
             <span>© <span id="year">2026</span> Habib Nugroho.</span>
+            <div class="flex items-center gap-4">
+                <a href="#layanan" class="hover:text-stone-700 dark:hover:text-stone-200 transition-colors" data-i18n="footer_services">Layanan</a>
+                <a href="#keahlian" class="hover:text-stone-700 dark:hover:text-stone-200 transition-colors" data-i18n="footer_tech">Teknologi</a>
+                <a href="#kontak" class="hover:text-stone-700 dark:hover:text-stone-200 transition-colors" data-i18n="footer_contact">Kontak</a>
+            </div>
         </div>
     </footer>
 
     <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden items-center gap-2 px-4 py-2.5 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-xs font-medium shadow-lg">
-        <svg class="w-4 h-4 text-emerald-400 dark:text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-2.5 px-5 py-3 rounded-xl bg-stone-900 dark:bg-stone-100 text-stone-50 dark:text-stone-900 text-sm font-medium shadow-xl shadow-brand-600/20 dark:shadow-brand-400/20 animate-slide-up">
+        <svg class="w-5 h-5 text-emerald-400 dark:text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
         <span data-i18n="toast_copied">Alamat email berhasil disalin.</span>
@@ -479,7 +962,7 @@
                     nav_approach: 'Cara Kerja',
                     nav_contact: 'Kontak',
                     hero_badge: 'Praktisi IT & Web Developer — Indonesia',
-                    hero_title: 'Membangun dan memperbaiki situs web yang andal, <span class="italic text-amber-700 dark:text-amber-400">efisien, dan tepat sasaran.</span>',
+                    hero_title: 'Membangun dan memperbaiki situs web yang andal, <span class="italic text-gradient">efisien, dan tepat sasaran.</span>',
                     hero_p1: 'Halo, saya <strong class="font-semibold text-stone-900 dark:text-stone-100">Habib Nugroho</strong>, seorang programmer dan praktisi IT dari Indonesia. Keahlian utama saya berfokus pada pembuatan dan pengelolaan situs berbasis <strong class="font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify, dan Laravel</strong>.',
                     hero_p2: 'Dengan memanfaatkan AI seperti <strong class="font-medium text-stone-900 dark:text-stone-100">Claude, ChatGPT, dan Gemini</strong> secara terarah, kini saya juga dapat membangun website maupun web app dengan berbagai bahasa atau stack teknologi sesuai keinginan Anda.',
                     hero_cta_email: 'Diskusi via Email',
@@ -492,6 +975,7 @@
                     card_item2_desc: 'Fleksibel memakai Claude, ChatGPT & Gemini sesuai kebutuhan proyek.',
                     card_item3_title: 'Perbaikan & Solusi IT',
                     card_item3_desc: 'Troubleshooting error, optimasi kecepatan, dan harga bersahabat.',
+                    card_footer: 'Dibangun dengan ketelitian & AI modern',
                     srv_eyebrow: 'Layanan Utama',
                     srv_heading: 'Solusi pembuatan dan perbaikan situs untuk berbagai kebutuhan',
                     srv_sub: 'Baik memulai dari nol maupun merapikan sistem yang sudah berjalan, setiap pekerjaan difokuskan pada hasil yang stabil dan mudah digunakan.',
@@ -501,6 +985,8 @@
                     srv2_desc: 'Mengombinasikan keahlian coding dengan Claude, ChatGPT, dan Gemini, saya dapat mengembangkan situs atau web app menggunakan stack apa pun sesuai spesifikasi yang Anda minta.',
                     srv3_title: 'Perbaikan Situs & Bantuan IT',
                     srv3_desc: 'Mengatasi website error, bug tampilan, loading lambat, pemindahan hosting/domain, serta berbagai kendala teknis IT harian dengan solusi cepat dan biaya terjangkau.',
+                    srv_cta_text: 'Butuh solusi yang tidak tercantum di atas?',
+                    srv_cta_btn: 'Diskusikan Kebutuhan Anda',
                     tech_eyebrow: 'Platform & Ekosistem AI',
                     tech_heading: 'Perangkat yang saya gunakan setiap hari',
                     tech_note: 'Memadukan fondasi pemrograman yang kuat dengan asistensi AI modern.',
@@ -510,6 +996,14 @@
                     tag_ai_arch: 'AI Kode & Arsitektur',
                     tag_ai_logic: 'AI Logika & Debugging',
                     tag_ai_multi: 'AI Riset & Lintas Stack',
+                    tag_extra1: 'HTML/CSS',
+                    tag_extra2: 'JavaScript',
+                    tag_extra3: 'TypeScript',
+                    tag_extra4: 'Tailwind',
+                    tag_extra5: 'Git',
+                    tag_extra6: 'Docker',
+                    tag_extra7: 'REST API',
+                    tag_extra8: 'MySQL',
                     app_eyebrow: 'Cara Kerja',
                     app_heading: 'Mengapa bekerja sama dengan saya?',
                     app1_title: 'Solusi yang tepat guna',
@@ -520,14 +1014,28 @@
                     app3_desc: 'Alur kerja yang efisien memungkinkan biaya pembuatan maupun perbaikan situs tetap ramah di kantong bagi personal maupun UMKM.',
                     app4_title: 'Komunikasi mudah dipahami',
                     app4_desc: 'Penjelasan progres disampaikan secara jelas tanpa istilah teknis yang membingungkan, dari tahap awal hingga website siap online.',
+                    process1_title: 'Konsultasi & Analisis',
+                    process1_desc: 'Memahami kebutuhan, mengevaluasi situs existing, dan merencanakan arsitektur solusi.',
+                    process2_title: 'Pengembangan Cepat',
+                    process2_desc: 'Membangun dengan AI-assisted coding, code review otomatis, dan best practices modern.',
+                    process3_title: 'Testing & Launch',
+                    process3_desc: 'QA menyeluruh, optimasi performa, dan deploy dengan dukungan pasca-launch.',
                     cnt_eyebrow: 'Mulai Konsultasi',
                     cnt_title: 'Punya rencana membuat situs atau kendala IT?',
                     cnt_desc: 'Jika Anda ingin membuat situs baru, memperbaiki situs yang bermasalah, atau membutuhkan solusi apa pun yang berhubungan dengan IT, silakan hubungi saya di <strong class="font-semibold text-stone-900 dark:text-stone-100">habibimron1508@gmail.com</strong>. Saya akan membantu memberikan solusi yang tepat dengan harga terjangkau.',
                     cnt_btn_email: 'Hubungi via Email',
                     cnt_btn_copy: 'Salin Alamat Email',
+                    cnt_alt: 'Atau hubungi melalui:',
                     footer_left: 'Habib Nugroho — Web Developer & Praktisi IT Indonesia',
+                    footer_services: 'Layanan',
+                    footer_tech: 'Teknologi',
+                    footer_contact: 'Kontak',
                     toast_copied: 'Alamat email berhasil disalin.',
-                    mail_subject: 'Konsultasi Website / IT'
+                    mail_subject: 'Konsultasi Website / IT',
+                    scroll_down: 'Scroll',
+                    trust_projects: '50+ Proyek Selesai',
+                    trust_clients: 'Klien Puas',
+                    trust_response: 'Respons < 24 Jam',
                 },
                 en: {
                     page_title: 'Habib Nugroho — Web Developer & IT Practitioner Indonesia',
@@ -536,7 +1044,7 @@
                     nav_approach: 'Approach',
                     nav_contact: 'Contact',
                     hero_badge: 'IT Practitioner & Web Developer — Indonesia',
-                    hero_title: 'Building and fixing websites that are reliable, <span class="italic text-amber-700 dark:text-amber-400">efficient, and built to purpose.</span>',
+                    hero_title: 'Building and fixing websites that are reliable, <span class="italic text-gradient">efficient, and built to purpose.</span>',
                     hero_p1: 'Hi, I am <strong class="font-semibold text-stone-900 dark:text-stone-100">Habib Nugroho</strong>, a programmer and IT practitioner based in Indonesia. My core expertise focuses on building and managing websites powered by <strong class="font-semibold text-stone-900 dark:text-stone-100">WordPress, Shopify, and Laravel</strong>.',
                     hero_p2: 'By leveraging AI tools like <strong class="font-medium text-stone-900 dark:text-stone-100">Claude, ChatGPT, and Gemini</strong> purposefully, I can also build websites and web applications using any programming language or tech stack tailored to your exact preferences.',
                     hero_cta_email: 'Discuss via Email',
@@ -549,6 +1057,7 @@
                     card_item2_desc: 'Flexible workflow with Claude, ChatGPT & Gemini for any project.',
                     card_item3_title: 'Site Fixes & IT Solutions',
                     card_item3_desc: 'Error troubleshooting, speed optimization, and affordable pricing.',
+                    card_footer: 'Built with precision & modern AI',
                     srv_eyebrow: 'Core Services',
                     srv_heading: 'Website development and repair solutions for every need',
                     srv_sub: 'Whether starting from scratch or fixing an existing system, every project focuses on stability, speed, and ease of use.',
@@ -558,6 +1067,8 @@
                     srv2_desc: 'Combining hands-on coding skills with Claude, ChatGPT, and Gemini, I can develop websites or web apps on virtually any tech stack you require.',
                     srv3_title: 'Site Repairs & IT Support',
                     srv3_desc: 'Fixing broken websites, layout bugs, slow load speeds, hosting/domain migrations, and day-to-day technical IT issues at an affordable rate.',
+                    srv_cta_text: 'Need a solution not listed above?',
+                    srv_cta_btn: 'Discuss Your Needs',
                     tech_eyebrow: 'Platforms & AI Ecosystem',
                     tech_heading: 'Tools I work with every day',
                     tech_note: 'Pairing strong programming fundamentals with modern AI assistance.',
@@ -567,6 +1078,14 @@
                     tag_ai_arch: 'AI Code & Architecture',
                     tag_ai_logic: 'AI Logic & Debugging',
                     tag_ai_multi: 'AI Research & Multi-Stack',
+                    tag_extra1: 'HTML/CSS',
+                    tag_extra2: 'JavaScript',
+                    tag_extra3: 'TypeScript',
+                    tag_extra4: 'Tailwind',
+                    tag_extra5: 'Git',
+                    tag_extra6: 'Docker',
+                    tag_extra7: 'REST API',
+                    tag_extra8: 'MySQL',
                     app_eyebrow: 'How I Work',
                     app_heading: 'Why work together with me?',
                     app1_title: 'Practical, right-fit solutions',
@@ -577,14 +1096,28 @@
                     app3_desc: 'An efficient workflow keeps website creation and repair costs fair and budget-friendly for individuals and growing businesses.',
                     app4_title: 'Clear, jargon-free communication',
                     app4_desc: 'You get straightforward progress updates in plain language from initial discussion until your site goes live.',
+                    process1_title: 'Consultation & Analysis',
+                    process1_desc: 'Understanding requirements, evaluating existing sites, and planning solution architecture.',
+                    process2_title: 'Rapid Development',
+                    process2_desc: 'Building with AI-assisted coding, automated code review, and modern best practices.',
+                    process3_title: 'Testing & Launch',
+                    process3_desc: 'Comprehensive QA, performance optimization, and deploy with post-launch support.',
                     cnt_eyebrow: 'Start a Consultation',
                     cnt_title: 'Planning a new website or need IT assistance?',
                     cnt_desc: 'If you want to build a new website, fix an existing site, or need any IT-related solution, feel free to contact me at <strong class="font-semibold text-stone-900 dark:text-stone-100">habibimron1508@gmail.com</strong>. I will provide the right solution at an affordable price.',
                     cnt_btn_email: 'Contact via Email',
                     cnt_btn_copy: 'Copy Email Address',
+                    cnt_alt: 'Or reach out via:',
                     footer_left: 'Habib Nugroho — Web Developer & IT Practitioner Indonesia',
+                    footer_services: 'Services',
+                    footer_tech: 'Tech Stack',
+                    footer_contact: 'Contact',
                     toast_copied: 'Email address copied to clipboard.',
-                    mail_subject: 'Website / IT Consultation'
+                    mail_subject: 'Website / IT Consultation',
+                    scroll_down: 'Scroll',
+                    trust_projects: '50+ Projects Done',
+                    trust_clients: 'Happy Clients',
+                    trust_response: 'Response < 24 Hrs',
                 }
             };
 
@@ -648,7 +1181,7 @@
                             observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
                 revealEls.forEach(el => revealObserver.observe(el));
             } else {
@@ -664,8 +1197,11 @@
 
             if (themeToggle) {
                 themeToggle.addEventListener('click', () => {
+                    htmlEl.classList.add('theme-switching');
                     htmlEl.classList.toggle('dark');
                     safeSetStorage('theme', htmlEl.classList.contains('dark') ? 'dark' : 'light');
+                    // Remove switching class after transition
+                    setTimeout(() => htmlEl.classList.remove('theme-switching'), 300);
                 });
             }
 
@@ -775,6 +1311,34 @@
                         toast.classList.remove('flex');
                     }, 2400);
                 });
+            }
+
+            // Magnetic hover effect for buttons
+            document.querySelectorAll('.magnetic').forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    el.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.transform = 'translate(0, 0)';
+                });
+            });
+
+            // Parallax effect for hero shapes
+            const heroSection = document.querySelector('section:first-of-type');
+            const floatingShapes = document.querySelectorAll('.floating-shape');
+
+            if (heroSection && floatingShapes.length > 0) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * 0.1;
+                    floatingShapes.forEach((shape, index) => {
+                        const speed = 0.05 + (index * 0.02);
+                        shape.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                }, { passive: true });
             }
 
             // Initialize default language immediately
